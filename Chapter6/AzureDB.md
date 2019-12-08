@@ -11,4 +11,4 @@ Run the jar file with the parameters. Example: java -jar synthea-with-dependenci
 Output json files will be saved in output folder in the same directory.
 
 
-# [Chapter 7 - Azure SQL DB: Store structured patient and financial data](../Chapter7/AzureSQL.md)
+[Go to Chapter 7 - Azure SQL DB: Store structured patient and financial data](../Chapter7/AzureSQL.md)

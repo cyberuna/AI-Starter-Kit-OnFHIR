@@ -11,4 +11,4 @@ Run the jar file with the parameters. Example: java -jar synthea-with-dependenci
 Output json files will be saved in output folder in the same directory.
 
 
-[Chapter 5 - Azure Data Factory: Convert bundles to delimited json (ndjson)](../Chapter5/AzureDF.md)
+[Go to Chapter 5 - Azure Data Factory: Convert bundles to delimited json (ndjson)](../Chapter5/AzureDF.md)

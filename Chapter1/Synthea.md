@@ -11,4 +11,4 @@ Run the jar file with the parameters. Example: java -jar synthea-with-dependenci
 Output json files will be saved in output folder in the same directory.
 
 
-[Chapter 2 - Azure API for FHIR: Create and configure](../Chapter2/AzureAPI.md)
+[Go to Chapter 2 - Azure API for FHIR: Create and configure](../Chapter2/AzureAPI.md)

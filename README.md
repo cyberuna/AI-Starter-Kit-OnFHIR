@@ -5,11 +5,11 @@ This uses some sample code available from the [FHIR Server Samples] (https://git
 
 The overall solution architecture is a combination of: configuration of Synthea to create sample data, load that data into Azure API for FHIR and consume that data using Azure services.
 
-<center><img src="images//azure-api-fhir-paas.png" width="512"></center>
+<center><img src="images//azure-api-fhir-paas.png" width="700"></center>
 
 # Contents
 
-* [Chapter 1 - Synthea: Generate FHIR patient and financial bundles](../Chapter1/Synthea.md)
+* [Chapter 1 - Synthea: Generate FHIR patient and financial bundles](./Chapter1/Synthea.md)
 * [Chapter 2 - Azure API for FHIR: Create and configure](../Chapter2/AzureAPI.md)
 * [Chapter 3 - Azure Blob storage: Load the bundles](../Chapter3/AzureBlob.md)
 * [Chapter 4 - Azure Function: Bulk ingest into Azure API for FHIR](../Chapter4/AzureFunction.md)

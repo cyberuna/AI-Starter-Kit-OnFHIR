@@ -11,4 +11,4 @@ Run the jar file with the parameters. Example: java -jar synthea-with-dependenci
 Output json files will be saved in output folder in the same directory.
 
 
-[Chapter 4 - Azure Function: Bulk ingest into Azure API for FHIR](../Chapter4/AzureFunction.md)
+[Go to Chapter 4 - Azure Function: Bulk ingest into Azure API for FHIR](../Chapter4/AzureFunction.md)

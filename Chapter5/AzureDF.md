@@ -10,4 +10,4 @@ Copy [synthea.properties](./synthea.properties) file to the same location as the
 Run the jar file with the parameters. Example: java -jar synthea-with-dependencies.jar -s 1048576 -p 100 Texas -c <path>\synthea.properties 
 Output json files will be saved in output folder in the same directory.
 
-[Chapter 6 - Azure Databricks: Parse json and load into Azure SQL DB](../Chapter6/AzureDB.md)
+[Go to Chapter 6 - Azure Databricks: Parse json and load into Azure SQL DB](../Chapter6/AzureDB.md)

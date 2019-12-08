@@ -11,4 +11,4 @@ Run the jar file with the parameters. Example: java -jar synthea-with-dependenci
 Output json files will be saved in output folder in the same directory.
 
 
-[Chapter 3 - Azure Blob storage: Load the bundles](../Chapter3/AzureBlob.md)
+[Go to Chapter 3 - Azure Blob storage: Load the bundles](../Chapter3/AzureBlob.md)

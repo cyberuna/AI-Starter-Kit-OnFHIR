@@ -10,5 +10,5 @@ Copy [synthea.properties](./synthea.properties) file to the same location as the
 Run the jar file with the parameters. Example: java -jar synthea-with-dependencies.jar -s 1048576 -p 100 Texas -c <path>\synthea.properties 
 Output json files will be saved in output folder in the same directory.
 
-[Chapter 9 - Open Source FHIR Server: Create and Configure](../Chapter9/OpenSource.md)
+[Go to Chapter 9 - Open Source FHIR Server: Create and Configure](../Chapter9/OpenSource.md)
 

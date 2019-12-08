@@ -11,4 +11,4 @@ Run the jar file with the parameters. Example: java -jar synthea-with-dependenci
 Output json files will be saved in output folder in the same directory.
 
 
-# [Chapter 8 - PowerBI: Analyze the FHIR bundles](../Chapter8/PowerBI.md)
+[Go to Chapter 8 - PowerBI: Analyze the FHIR bundles](../Chapter8/PowerBI.md)
