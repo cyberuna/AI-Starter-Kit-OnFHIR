@@ -1,9 +1,9 @@
 # OnFHIR - Starter Kit for Azure API for FHIR 
 
-This respository contains example code and scenarios that show use of the [Azure API for FHIR](https://docs.microsoft.com/azure/healthcare-apis) PaaS server to populate and consume patient and financial data. 
-This uses some sample code available from the [FHIR Server Samples] (https://github.com/microsoft/fhir-server-samples).
+This respository contains example code and scenarios that shows the use of the [Azure API for FHIR](https://docs.microsoft.com/azure/healthcare-apis) PaaS server to populate and consume patient and financial data. 
+Some sample codes are used from the [FHIR Server Samples] (https://github.com/microsoft/fhir-server-samples).
 
-The overall solution architecture is a combination of: configuration of Synthea to create sample data, load that data into Azure API for FHIR and consume that data using Azure services.
+The overall solution architecture is a combination of: Generate sample FHIR data using Synthea, Load that data into Azure API for FHIR, Store that data, and Consume that data using Azure services.
 
 <center><img src="images//azure-api-fhir-paas.png" width="700"></center>
 
