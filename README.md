@@ -3,9 +3,13 @@
 This respository contains example code and scenarios that shows the use of the [Azure API for FHIR](https://docs.microsoft.com/azure/healthcare-apis) PaaS server to populate and consume patient and financial data. 
 Some sample codes are used from the [FHIR Server Samples] (https://github.com/microsoft/fhir-server-samples).
 
-The overall solution architecture is a combination of: Generate sample FHIR data using Synthea, Load that data into Azure API for FHIR, Store that data, and Consume that data using Azure services.
+The high level solution architecture includes: 
+## Generate Data FHIR data using Synthea
+## Store the generated FHIR data into Azure Blob Storage to be loaded into Azure API for FHIR using Azure Function
+## Store FHIR data in Azure API for FHIR
+## Prepare the FHIR data using Azure Data Factory, Azure Databricks and Azure SQL DB to be consume for analysis by PowerBI.
 
-<center><img src="images//azure-api-fhir-paas.png" width="700"></center>
+<center><img src="images//azure-api-fhir-paas.png" width="850"></center>
 
 # Contents
 
