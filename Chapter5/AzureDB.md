@@ -1,14 +1,17 @@
 # Chapter 5 - Azure Databricks: Parse json and load into Azure SQL DB
 
-Synthea is an open-source synthetic patient and associated health records generator that simulates the medical history of synthetic patients.
-Synthea generates HL7 FHIR records using the HAPI FHIR library to generate a FHIR Bundle for [these](https://github.com/synthetichealth/synthea/wiki/HL7-FHIR) FHIR Resources.
-More on synthea [here](https://github.com/synthetichealth/synthea).
+Azure Databricks is a fast, easy, and collaborative Apache SparkTM–based analytics service. Spark SQL is a Spark module for structured data processing.
 
-# Setup Synthea
-Follow the [setup] (https://github.com/synthetichealth/synthea/wiki/Basic-Setup-and-Running) instructions.
-Copy [synthea.properties](./synthea.properties) file to the same location as the .jar file downloaded from the previous step.
-Run the jar file with the parameters. Example: java -jar synthea-with-dependencies.jar -s 1048576 -p 100 Texas -c <path>\synthea.properties 
-Output json files will be saved in output folder in the same directory.
+Create a SQL Server and SQL Database to load data for all specified resource types.
 
+This Databricks [notebook]() shows:
+* Mount the storage account containing the ndjson files from ADF
+* Create and load each of the resource types into temporary tables
+* Parse the json fields from each of these temporary tables
+* Create a connection to a SQL DB 
+* Create tables for each of these resource types
+* Insert required parsed data from temporary tables into the tables in SQL DB
 
-[Go to Chapter 6 - Azure SQL DB: Store structured patient and financial data](../Chapter6/AzureSQL.md)
+***
+
+[Go to Chapter 6 - PowerBI: Analyze the FHIR bundles](./Chapter6/PowerBI.md)

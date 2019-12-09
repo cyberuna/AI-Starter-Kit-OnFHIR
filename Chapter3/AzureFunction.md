@@ -6,7 +6,7 @@
 This Azure function app is created to monitor the storage account and ingest any FHIR bundles uploaded to the container into the Azure API for FHIR service.
 
 
-Deploy the function using the template[azuredeploy-aci-importer.json](./azuredeploy-aci-importer.json) using [Azure Resource Manager in Azure Portal](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy-portal#deploy-resources-from-custom-template). This template will deploy a storage account, application insights and the function in an Azure Container Instance. 
+Deploy the function using the template[azuredeploy-importer.json](./azuredeploy-importer.json) using [Azure Resource Manager in Azure Portal](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy-portal#deploy-resources-from-custom-template). This template will deploy a storage account, application insights and the function in an Azure Container Instance. 
 
 When deploying, the following environment variables should be set:
 
