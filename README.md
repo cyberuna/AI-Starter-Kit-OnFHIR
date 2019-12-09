@@ -4,10 +4,10 @@ This respository contains example code and scenarios that shows the use of the [
 Some sample codes are used from the [FHIR Server Samples] (https://github.com/microsoft/fhir-server-samples).
 
 The high level solution architecture includes: 
-#### * Generate FHIR data using Synthea
-#### * Store the generated FHIR data into Azure Blob Storage to be loaded into Azure API for FHIR using Azure Function
-#### * Store FHIR data in Azure API for FHIR
-#### * Prepare the FHIR data using Azure Data Factory, Azure Databricks and store in Azure SQL DB to be consume for analysis by PowerBI.
+#### * Generate Data: Generate FHIR data using Synthea
+#### * Ingest Data: Upload the generated data into Azure Blob Storage. Ingest into Azure API for FHIR using Azure Function
+#### * Store Data: Store FHIR data in Azure API for FHIR service
+#### * Prepare and Analyze Data: Prepare data using Azure Data Factory and Azure Databricks. Store in Azure SQL DB. Analyze using PowerBI.
 
 <center><img src="images//azure-api-fhir-paas.png" width="850"></center>
 
