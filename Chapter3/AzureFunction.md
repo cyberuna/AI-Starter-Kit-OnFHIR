@@ -1,6 +1,6 @@
 # Chapter 3 - Azure Blob Storage and Azure Function: Ingest data into Azure API for FHIR
 
-### Azure Function Setup
+### Azure Function
 [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/) is a serverless compute service that lets you run event-triggered code without having to explicitly provision or manage infrastructure.
 
 This Azure function app is created to monitor the storage account and ingest any FHIR bundles uploaded to the container into the Azure API for FHIR service.
