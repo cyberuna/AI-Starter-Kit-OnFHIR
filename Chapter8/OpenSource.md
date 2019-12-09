@@ -1,4 +1,4 @@
-# Chapter 9 - Open Source FHIR Server: Create and Configure
+# Chapter 8 - Open Source FHIR Server: Create and Configure
 
 Synthea is an open-source synthetic patient and associated health records generator that simulates the medical history of synthetic patients.
 Synthea generates HL7 FHIR records using the HAPI FHIR library to generate a FHIR Bundle for [these](https://github.com/synthetichealth/synthea/wiki/HL7-FHIR) FHIR Resources.

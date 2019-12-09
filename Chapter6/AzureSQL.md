@@ -1,4 +1,4 @@
-# Chapter 8 - PowerBI: Analyze the FHIR bundles
+# Chapter 6 - Azure SQL DB: Store structured patient and financial data
 
 Synthea is an open-source synthetic patient and associated health records generator that simulates the medical history of synthetic patients.
 Synthea generates HL7 FHIR records using the HAPI FHIR library to generate a FHIR Bundle for [these](https://github.com/synthetichealth/synthea/wiki/HL7-FHIR) FHIR Resources.
@@ -10,5 +10,5 @@ Copy [synthea.properties](./synthea.properties) file to the same location as the
 Run the jar file with the parameters. Example: java -jar synthea-with-dependencies.jar -s 1048576 -p 100 Texas -c <path>\synthea.properties 
 Output json files will be saved in output folder in the same directory.
 
-[Go to Chapter 9 - Open Source FHIR Server: Create and Configure](../Chapter9/OpenSource.md)
 
+[Go to Chapter 7 - PowerBI: Analyze the FHIR bundles](../Chapter7/PowerBI.md)

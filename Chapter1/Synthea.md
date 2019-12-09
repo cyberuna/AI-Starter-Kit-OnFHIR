@@ -10,6 +10,6 @@ More on synthea [here](https://github.com/synthetichealth/synthea).
 * Run the jar file with the parameters. Example: java -jar synthea-with-dependencies.jar -s 1048576 -p 100 Texas -c <path>\synthea.properties . More examples in the link above.
 * Output json files will be saved in output folder in the same directory.
 
-
+***
 
 [Go to Chapter 2 - Azure API for FHIR: Create and configure](../Chapter2/AzureAPI.md)

@@ -4,10 +4,10 @@ This respository contains example code and scenarios that shows the use of the [
 Some sample codes are used from the [FHIR Server Samples] (https://github.com/microsoft/fhir-server-samples).
 
 The high level solution architecture includes: 
-#### * Generate Data FHIR data using Synthea
-## Store the generated FHIR data into Azure Blob Storage to be loaded into Azure API for FHIR using Azure Function
-## Store FHIR data in Azure API for FHIR
-## Prepare the FHIR data using Azure Data Factory, Azure Databricks and Azure SQL DB to be consume for analysis by PowerBI.
+#### * Generate FHIR data using Synthea
+#### * Store the generated FHIR data into Azure Blob Storage to be loaded into Azure API for FHIR using Azure Function
+#### * Store FHIR data in Azure API for FHIR
+#### * Prepare the FHIR data using Azure Data Factory, Azure Databricks and store in Azure SQL DB to be consume for analysis by PowerBI.
 
 <center><img src="images//azure-api-fhir-paas.png" width="850"></center>
 
@@ -15,13 +15,12 @@ The high level solution architecture includes:
 
 * [Chapter 1 - Synthea: Generate FHIR patient and financial bundles](./Chapter1/Synthea.md)
 * [Chapter 2 - Azure API for FHIR: Create and configure](../Chapter2/AzureAPI.md)
-* [Chapter 3 - Azure Blob storage: Load the bundles](../Chapter3/AzureBlob.md)
-* [Chapter 4 - Azure Function: Bulk ingest into Azure API for FHIR](../Chapter4/AzureFunction.md)
-* [Chapter 5 - Azure Data Factory: Convert bundles to delimited json (ndjson)](../Chapter5/AzureDF.md)
-* [Chapter 6 - Azure Databricks: Parse json and load into Azure SQL DB](../Chapter6/AzureDB.md)
-* [Chapter 7 - Azure SQL DB: Store structured patient and financial data](../Chapter7/AzureSQL.md)
-* [Chapter 8 - PowerBI: Analyze the FHIR bundles](../Chapter8/PowerBI.md)
-* [Chapter 9 - Open Source FHIR Server: Create and Configure](../Chapter9/OpenSource.md)
+* [Chapter 3 - Azure Blob Storage and Azure Function: Bulk Ingest data into Azure API for FHIR](../Chapter3/AzureFunction.md)
+* [Chapter 4 - Azure Data Factory: Convert bundles to delimited json (ndjson)](../Chapter4/AzureDF.md)
+* [Chapter 5 - Azure Databricks: Parse json and load into Azure SQL DB](../Chapter5/AzureDB.md)
+* [Chapter 6 - Azure SQL DB: Store structured patient and financial data](../Chapter6/AzureSQL.md)
+* [Chapter 7 - PowerBI: Analyze the FHIR bundles](../Chapter7/PowerBI.md)
+* [Chapter 8 - Open Source FHIR Server: Create and Configure](../Chapter8/OpenSource.md)
 
 # Contributing
 
@@ -43,4 +42,4 @@ This sample is provided as is and is not meant for use on a production environme
 
 Microsoft can make no representation concerning the content of this sample. Microsoft is providing this information only as a convenience to you. This is to inform you that Microsoft has not tested the sample and therefore cannot make any representations regarding the quality, safety, or suitability of any code or information found here.   
 
-======================
+***
