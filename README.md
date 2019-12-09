@@ -14,13 +14,13 @@ The high level solution architecture includes:
 # Contents
 
 * [Chapter 1 - Synthea: Generate FHIR patient and financial bundles](./Chapter1/Synthea.md)
-* [Chapter 2 - Azure API for FHIR: Create and configure](../Chapter2/AzureAPI.md)
-* [Chapter 3 - Azure Blob Storage and Azure Function: Bulk Ingest data into Azure API for FHIR](../Chapter3/AzureFunction.md)
-* [Chapter 4 - Azure Data Factory: Convert bundles to delimited json (ndjson)](../Chapter4/AzureDF.md)
-* [Chapter 5 - Azure Databricks: Parse json and load into Azure SQL DB](../Chapter5/AzureDB.md)
-* [Chapter 6 - Azure SQL DB: Store structured patient and financial data](../Chapter6/AzureSQL.md)
-* [Chapter 7 - PowerBI: Analyze the FHIR bundles](../Chapter7/PowerBI.md)
-* [Chapter 8 - Open Source FHIR Server: Create and Configure](../Chapter8/OpenSource.md)
+* [Chapter 2 - Azure API for FHIR: Create and configure](./Chapter2/AzureAPI.md)
+* [Chapter 3 - Azure Blob Storage and Azure Function: Bulk Ingest data into Azure API for FHIR](./Chapter3/AzureFunction.md)
+* [Chapter 4 - Azure Data Factory: Convert bundles to delimited json (ndjson)](./Chapter4/AzureDF.md)
+* [Chapter 5 - Azure Databricks: Parse json and load into Azure SQL DB](./Chapter5/AzureDB.md)
+* [Chapter 6 - Azure SQL DB: Store structured patient and financial data](./Chapter6/AzureSQL.md)
+* [Chapter 7 - PowerBI: Analyze the FHIR bundles](./Chapter7/PowerBI.md)
+* [Chapter 8 - Open Source FHIR Server: Create and Configure](./Chapter8/OpenSource.md)
 
 # Contributing
 

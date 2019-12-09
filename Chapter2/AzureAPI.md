@@ -8,9 +8,8 @@ The Azure API for FHIR ingests, normalizes, secures and stores data with auditin
 * [Setup Azure API for FHIR](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir-paas-portal-quickstart) to deploy FHIR service using the Azure portal
 * [Verify Access Azure API for FHIR with Postman](https://docs.microsoft.com/en-us/azure/healthcare-apis/access-fhir-postman-tutorial). Postman helps interact directly with the FHIR server as you build applications for debugging purposes.
 * [Register Applications](https://docs.microsoft.com/en-us/azure/healthcare-apis/tutorial-1-decision-flow)
-* Register Client Application. A client application registration is an Azure Active Directory representation of an application that can be used to authenticate on behalf of a user and request access to resource applications. A confidential client application is an application that can be trusted to hold a secret and present that secret when requesting access tokens.
-  [Confidential](https://docs.microsoft.com/en-us/azure/healthcare-apis/register-confidential-azure-ad-client-app)
-  [Public](https://docs.microsoft.com/en-us/azure/healthcare-apis/register-public-azure-ad-client-app)
+* Register Client Application: A client application registration is an Azure Active Directory representation of an application that can be used to authenticate on behalf of a user and request access to resource applications. A confidential client application is an application that can be trusted to hold a secret and present that secret when requesting access tokens.
+  Register a [Confidential](https://docs.microsoft.com/en-us/azure/healthcare-apis/register-confidential-azure-ad-client-app) AND/OR [Public](https://docs.microsoft.com/en-us/azure/healthcare-apis/register-public-azure-ad-client-app) Application.
 * [Object IDs](https://docs.microsoft.com/en-us/azure/healthcare-apis/find-identity-object-ids)
   The fully managed Azure API for FHIR service is configured to allow access for only a pre-defined list of identity object IDs. An identity object ID is either the object ID of a user or a service principal in Azure Active Directory. Object ID of the user creating the service is added by default. Add the object ID for the client application to the FHIR service.
 * [Configure Cosmos Database Settings](https://docs.microsoft.com/en-us/azure/healthcare-apis/configure-database)
