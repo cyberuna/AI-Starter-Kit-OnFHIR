@@ -5,12 +5,45 @@ Azure Databricks is a fast, easy, and collaborative Apache SparkTM–based analy
 Create a SQL Server and SQL Database to load data for all specified resource types.
 
 This Databricks [notebook]() includes:
-* Mount the storage account containing the ndjson files from ADF
+* Connect to the storage account containing the ndjson files from ADF
+
+```
+storageAccountName = <mystorageaccount>
+storageAccountKey = <mystoragekey>
+
+if not any(mount.mountPoint == '/mnt/dataexport' for mount in dbutils.fs.mounts()):
+  dbutils.fs.mount(
+    source = "wasbs://dataexport@" + storageAccountName + ".blob.core.windows.net",
+    mount_point = '/mnt/dataexport',
+    extra_configs = {"fs.azure.account.key." + storageAccountName + ".blob.core.windows.net":storageAccountKey})
+```
+
 * Create and load each of the resource types into temporary tables
-* Parse the json fields from each of these temporary tables
-* Create a connection to a SQL DB 
-* Create tables for each of these resource types based on the json file
+```
+%sql 
+DROP TABLE IF EXISTS patientTable;
+CREATE TEMPORARY TABLE patientTable USING json OPTIONS (path "/mnt/dataexport/Patient.json");
+```
+
+* Create tables for each of these resource types based on the json file. Create Patient table in SQL Database using SQL Management Studio or Azure Portal.
+```
+%sql
+DROP TABLE IF EXISTS jdbcPatientTable;
+CREATE TABLE jdbcPatientTable
+USING org.apache.spark.sql.jdbc
+OPTIONS (
+  url "jdbc:sqlserver://<mysqlserver>.database.windows.net:1433;database=<mysqldatabase>",
+  dbtable "dbo.Patient",
+  user <myuser>,
+  password <mypassword>
+);
+```
 * Insert required parsed data columns from temporary tables into the tables in SQL DB
+```
+%sql
+INSERT INTO jdbcPatientTable
+SELECT id as patientid, name.family[0] as lastname, name.given[0] as firstname, maritalStatus.coding[0].display as maritalStatus, birthDate, gender, address.line[0] as streetname, address.city[0] as city, address.postalCode as postalCode, address.state[0] as state, address.country[0] as country, telecom.value as phone, address[0].extension[0].extension.valueDecimal[0] as latitude, address[0].extension[0].extension.valueDecimal[0] as longitude from patientTable;
+```
 
 This notebook can be triggered from Azure Data Factory. Create a linked service in the data factory to point to this notebook. Create a pipeline to run this notebook.
 
