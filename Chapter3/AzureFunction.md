@@ -1,6 +1,6 @@
 # Chapter 3 - Azure Blob Storage and Azure Function: Ingest data into Azure API for FHIR
 
-### Azure Function
+## Azure Function
 [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/) is a serverless compute service that lets you run event-triggered code without having to explicitly provision or manage infrastructure.
 
 This Azure function app is created to monitor the storage account, and ingest any FHIR bundles uploaded to the container into the Azure API for FHIR service.
@@ -22,7 +22,7 @@ FhirServerUrl=<e.g. https://myaccount.azurehealthcareapis.com>
 MaxDegreeOfParallelism=<default 16>	
 ```
 
-### Azure Blob Storage
+## Azure Blob Storage
 Container `fhirimport` and `fhirrejected` will be created in the storage account.
 When FHIR bundles are uploaded to `fhirimport` container, Azure Function gets triggered and data will be ingested into Azure API for FHIR service. If there are files that doesn't follow the FHIR standard, they will be moved into `fhirrejected` container. Once the files are ingested into the FHIR service, they will be removed from `fhirimport` container.
 
