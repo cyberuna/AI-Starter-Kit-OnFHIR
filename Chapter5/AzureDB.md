@@ -4,7 +4,7 @@ Azure Databricks is a fast, easy, and collaborative Apache SparkTM–based analy
 
 Create a SQL Server and SQL Database to load data for all specified resource types.
 
-This Databricks [notebook]() includes:
+This Databricks [notebook](./fhirdatabrickstemplate.ipynb) includes:
 * Connect to the storage account containing the ndjson files from ADF
 
 ```
