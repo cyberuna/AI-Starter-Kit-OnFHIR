@@ -13,7 +13,7 @@ The high level solution architecture includes:
 
 # Contents
 
-* [Chapter 1 - Synthea: Generate FHIR patient and financial bundles](../Chapter1-Synthea/Synthea.md)
+* [Chapter 1 - Synthea: Generate FHIR patient and financial bundles](../master/Chapter1-Synthea/Synthea.md)
 * [Chapter 2 - Azure API for FHIR: Create and configure](./Chapter2-AzureAPIforFHIR/AzureAPI.md)
 * [Chapter 3 - Azure Blob Storage and Azure Function: Bulk Ingest data into Azure API for FHIR](./Chapter3-AzureBlobStorageandAzureFunction/AzureFunction.md)
 * [Chapter 4 - Azure Data Factory: Convert bundles to delimited json (ndjson)](./Chapter4-AzureDataFactory/AzureDF.md)
