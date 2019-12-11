@@ -8,12 +8,12 @@ The template will create:
 * Blob Storage account with `datastaging` and `dataexport` containers.
 * Linked Services to Blob Storage account, REST (Azure API for FHIR) and Databricks.
 
-<center><img src="../images/adf-connections.PNG" width="700"></center>
+<center><img src="../images/adf-connections.PNG" width="600"></center>
 
 * Datasets for each resource type for `datastaging`, `dataexport` containers and REST (Azure API for FHIR)
 * A pipeline for each of the resource types specified. This shows an example of Patient.
 
-<center><img src="../images/adf-export.PNG" width="700"></center>
+<center><img src="../images/adf-export.PNG" width="500"></center>
 
 * Create a master pipeline to combine all the pipelines by adding Execute Pipelines. This shows and example of 10 resourcetypes.
 
