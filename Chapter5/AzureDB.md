@@ -45,7 +45,9 @@ INSERT INTO jdbcPatientTable
 SELECT id as patientid, name.family[0] as lastname, name.given[0] as firstname, maritalStatus.coding[0].display as maritalStatus, birthDate, gender, address.line[0] as streetname, address.city[0] as city, address.postalCode as postalCode, address.state[0] as state, address.country[0] as country, telecom.value as phone, address[0].extension[0].extension.valueDecimal[0] as latitude, address[0].extension[0].extension.valueDecimal[0] as longitude from patientTable;
 ```
 
-This notebook can be triggered from Azure Data Factory. Create a linked service in the data factory to point to this notebook. Create a pipeline to run this notebook.
+* Add this notebook to Azure Data Factory
+Create a linked service in the data factory to point to this notebook. 
+Create a pipeline to run this notebook.
 
 ***
 
