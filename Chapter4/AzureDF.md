@@ -7,12 +7,12 @@ This Data Factory is used to export resource types to [ndjson](http://ndjson.org
 The template will create:
 * Blob Storage account with `datastaging` and `dataexport` containers
 * Linked Services to Blob Storage account and REST (Azure API for FHIR)
-<center><img src="../images/adf-connections.png" width="850"></center>
+<center><img src="../images//adf-connections.PNG" width="850"></center>
 * Datasets for each resource type for `datastaging`, `dataexport` containers and REST (Azure API for FHIR)
 * A pipeline for each of the resource types specified
-<center><img src="../images/adf-export.png" width="850"></center>
+<center><img src="../images/adf-export.PNG" width="850"></center>
 * Create a master pipeline to combine all the pipelines by adding Execute Pipelines.
-<center><img src="../images/adf-exportall.png" width="850"></center>
+<center><img src="../images/adf-exportall.PNG" width="850"></center>
 
 Publish All and run the master pipeline to export ndjson files for all specified resource types to blob storage `dataexport`. 
 
