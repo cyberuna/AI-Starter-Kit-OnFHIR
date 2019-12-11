@@ -30,4 +30,4 @@ Containers azure-webjobs-hosts and azure-webjobs-secrets will be created for use
 
 ***
 
-[Go to Chapter 4 - Azure Data Factory: Convert bundles to delimited json (ndjson)](../Chapter4/AzureDF.md)
+[Go to Chapter 4 - Azure Data Factory: Convert bundles to delimited json (ndjson)](../Chapter4-AzureDataFactory/AzureDF.md)

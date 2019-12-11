@@ -24,4 +24,4 @@ Publish All and run the master pipeline to export ndjson files for all specified
 
 ***
 
-[Go to Chapter 5 - Azure Databricks: Parse json and load into Azure SQL DB](../Chapter5/AzureDB.md)
+[Go to Chapter 5 - Azure Databricks: Parse json and load into Azure SQL DB](../Chapter5-AzureDatabricks/AzureDB.md)

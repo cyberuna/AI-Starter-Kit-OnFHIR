@@ -12,4 +12,4 @@ More on synthea [here](https://github.com/synthetichealth/synthea).
 
 ***
 
-[Go to Chapter 2 - Azure API for FHIR: Create and configure](../Chapter2/AzureAPI.md)
+[Go to Chapter 2 - Azure API for FHIR: Create and configure](../Chapter2-AzureAPIforFHIR/AzureAPI.md)
