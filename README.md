@@ -13,13 +13,13 @@ The high level solution architecture includes:
 
 # Contents
 
-* [Chapter 1 - Synthea: Generate FHIR patient and financial bundles](./Chapter1-Synthea/Synthea.md)
-* [Chapter 2 - Azure API for FHIR: Create and configure](./Chapter2-AzureAPIforFHIR/AzureAPI.md)
-* [Chapter 3 - Azure Blob Storage and Azure Function: Bulk Ingest data into Azure API for FHIR](./Chapter3-AzureBlobStorageandAzureFunction/AzureFunction.md)
-* [Chapter 4 - Azure Data Factory: Convert bundles to delimited json (ndjson)](./Chapter4-AzureDataFactory/AzureDF.md)
-* [Chapter 5 - Azure Databricks: Parse json and load into Azure SQL DB](./Chapter5-AzureDatabricks/AzureDB.md)
-* [Chapter 6 - PowerBI: Analyze the FHIR bundles](./Chapter6-PowerBI/PowerBI.md)
-* [Chapter 7 - Open Source FHIR Server: Create and Configure](./Chapter7-OpenSourceFHIRServer/OpenSource.md)
+* [Chapter 1 - Synthea: Generate FHIR patient and financial bundles](./Chapter1-Synthea/ReadMe.md)
+* [Chapter 2 - Azure API for FHIR: Create and configure](./Chapter2-AzureAPIforFHIR/ReadMe.md)
+* [Chapter 3 - Azure Blob Storage and Azure Function: Bulk Ingest data into Azure API for FHIR](./Chapter3-AzureBlobStorageandAzureFunction/ReadMe.md)
+* [Chapter 4 - Azure Data Factory: Convert bundles to delimited json (ndjson)](./Chapter4-AzureDataFactory/ReadMe.md)
+* [Chapter 5 - Azure Databricks: Parse json and load into Azure SQL DB](./Chapter5-AzureDatabricks/ReadMe.md)
+* [Chapter 6 - PowerBI: Analyze the FHIR bundles](./Chapter6-PowerBI/ReadMe.md)
+* [Chapter 7 - Open Source FHIR Server: Create and Configure](./Chapter7-OpenSourceFHIRServer/ReadMe.md)
 
 # Contributing
 
@@ -43,4 +43,4 @@ Microsoft can make no representation concerning the content of this sample. Micr
 
 ***
 
-[Go to Chapter 1 - Synthea: Generate FHIR patient and financial bundles](../Chapter1-Synthea/ReadMe.md)
+[Go to Chapter 1 - Synthea: Generate FHIR patient and financial bundles](../master/Chapter1-Synthea/ReadMe.md)

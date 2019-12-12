@@ -4,6 +4,8 @@ FHIR Server for Azure is an open-source implementation of the emerging [HL7 Fa
 
 This is built on [samples](https://github.com/Microsoft/fhir-server).
 
+Content is coming soon...
+
 *** 
 
 

@@ -17,4 +17,4 @@ The Azure API for FHIR ingests, normalizes, secures and stores data with auditin
 
 ***
 
-[Go to Chapter 3 - Azure Blob Storage and Azure Function: Bulk Ingest data into Azure API for FHIR](../Chapter3-AzureBlobStorageandAzureFunction/AzureFunction.md)
+[Go to Chapter 3 - Azure Blob Storage and Azure Function: Bulk Ingest data into Azure API for FHIR](../Chapter3-AzureBlobStorageandAzureFunction/ReadMe.md)

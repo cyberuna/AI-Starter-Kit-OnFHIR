@@ -51,4 +51,4 @@ Create a pipeline to run this notebook.
 
 ***
 
-[Go to Chapter 6 - PowerBI: Analyze the FHIR bundles](../Chapter6-PowerBI/PowerBI.md)
+[Go to Chapter 6 - PowerBI: Analyze the FHIR bundles](../Chapter6-PowerBI/ReadMe.md)

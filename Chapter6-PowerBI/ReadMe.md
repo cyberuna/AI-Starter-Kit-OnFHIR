@@ -77,5 +77,5 @@ in
  
 ***
 
-[Go to Chapter 7 - Open Source FHIR Server: Create and Configure](../Chapter7-OpenSourceFHIRServer/OpenSource.md)
+[Go to Chapter 7 - Open Source FHIR Server: Create and Configure](../Chapter7-OpenSourceFHIRServer/ReadMe.md)
 
