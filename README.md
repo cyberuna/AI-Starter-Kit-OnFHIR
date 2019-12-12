@@ -43,4 +43,4 @@ Microsoft can make no representation concerning the content of this sample. Micr
 
 ***
 
-[Go to Chapter 1 - Synthea: Generate FHIR patient and financial bundles](../Chapter1-Synthea/Synthea.md)
+[Go to Chapter 1 - Synthea: Generate FHIR patient and financial bundles](../Chapter1-Synthea/ReadMe.md)
