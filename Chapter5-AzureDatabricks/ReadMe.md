@@ -5,7 +5,7 @@ Azure Databricks is a fast, easy, and collaborative Apache SparkTM–based analy
 Create a SQL Server and SQL Database to load data for all specified resource types.
 
 This Databricks [notebook](./fhirdatabrickstemplate.ipynb) includes:
-* Connect to the storage account containing the ndjson files from ADF
+* Connect to the storage account containing the ndjson files from Azure Data Factory.
 
 ```
 storageAccountName = <mystorageaccount>
@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS patientTable;
 CREATE TEMPORARY TABLE patientTable USING json OPTIONS (path "/mnt/dataexport/Patient.json");
 ```
 
-* Create tables for each of these resource types based on the json file. Create Patient table in SQL Database using SQL Management Studio or Azure Portal.
+* Create tables for each of these resource types based on the json file. Create the Patient table in SQL Database using SQL Management Studio or Azure Portal.
 ```
 %sql
 DROP TABLE IF EXISTS jdbcPatientTable;
@@ -46,7 +46,7 @@ SELECT id as patientid, name.family[0] as lastname, name.given[0] as firstname, 
 ```
 
 * Add this notebook to Azure Data Factory
-Create a linked service in the data factory to point to this notebook. 
+Create a linked service in the Data Factory to point to this notebook. 
 Create a pipeline to run this notebook.
 
 ***
