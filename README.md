@@ -11,6 +11,9 @@ The high level solution architecture includes:
 
 <center><img src="images//azure-api-fhir-paas.png" width="850"></center>
 
+# Prerequisites
+Azure Subscription is required to complete this starter kit. Azure Subscription can be created for free - <https://azure.microsoft.com/en-us/free/>
+
 # Contents
 
 * [Chapter 1 - Synthea: Generate FHIR patient and financial bundles](./Chapter1-Synthea/ReadMe.md)
