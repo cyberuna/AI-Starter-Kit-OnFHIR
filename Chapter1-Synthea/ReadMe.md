@@ -1,6 +1,6 @@
 # Chapter 1 - Synthea: Generate FHIR patient and financial bundles
 
-This chapter shows how to setup and generate health records with Synthea.
+#### This chapter shows how to setup and generate health records with Synthea.
 
 Synthea is an open-source synthetic patient and associated health records generator that simulates the medical history of synthetic patients.
 Synthea generates HL7 FHIR records using the HAPI FHIR library to generate a FHIR Bundle for [these](https://github.com/synthetichealth/synthea/wiki/HL7-FHIR) FHIR Resources.
