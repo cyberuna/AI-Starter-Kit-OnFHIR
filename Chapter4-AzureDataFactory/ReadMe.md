@@ -11,11 +11,11 @@ The template will create:
 <center><img src="../images/adf-connections.PNG" width="600"></center>
 
 * Datasets for each resource type for `datastaging`, `dataexport` containers and REST (Azure API for FHIR)
-* A pipeline for each of the resource types specified. This shows an example of Patient.
+* A pipeline for each of the resource types specified. The following screenshot shows an example of the Patient pipeline.
 
 <center><img src="../images/adf-export.PNG" width="500"></center>
 
-* Create a master pipeline to combine all the pipelines by adding Execute Pipelines. This shows and example of 10 resourcetypes.
+* Create a master pipeline to combine all the pipelines by adding Execute Pipelines. This shows and example of 10 resource types.
 
 <center><img src="../images/adf-exportall.PNG" width="850"></center>
 
