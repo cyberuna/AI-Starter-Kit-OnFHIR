@@ -3,9 +3,9 @@
 This chapter shows how to setup Azure Databricks, parse and load health records into Azure SQL DB.
 
 ## Prerequisites
-Knowledge of [Azure Databricks](https://docs.microsoft.com/en-us/azure/azure-databricks/what-is-azure-databricks)
-Knowledge of [Azure SQL Database](https://docs.microsoft.com/en-us/azure/sql-database/)
-Knowledge of [Spark SQL](https://docs.microsoft.com/en-us/azure/databricks/spark/latest/spark-sql/)
+* Knowledge of [Azure Databricks](https://docs.microsoft.com/en-us/azure/azure-databricks/what-is-azure-databricks)
+* Knowledge of [Azure SQL Database](https://docs.microsoft.com/en-us/azure/sql-database/)
+* Knowledge of [Spark SQL](https://docs.microsoft.com/en-us/azure/databricks/spark/latest/spark-sql/)
 
 Azure Databricks is a fast, easy, and collaborative Apache SparkTM–based analytics service. Spark SQL is a Spark module for structured data processing.
 

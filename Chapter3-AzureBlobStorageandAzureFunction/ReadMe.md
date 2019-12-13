@@ -3,8 +3,8 @@
 This chapter shows how to setup Azure Function and Azure Blob Storage to ingest data into Azure API for FHIR.
 
 ## Prerequisites
-Knowledge of [Azure Function](https://docs.microsoft.com/en-us/azure/azure-functions/)
-Knowledge of [Azure Blob Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction)
+* Knowledge of [Azure Function](https://docs.microsoft.com/en-us/azure/azure-functions/)
+* Knowledge of [Azure Blob Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction)
 
 ## Azure Function
 Azure Functions is a serverless compute service that lets you run event-triggered code without having to explicitly provision or manage infrastructure.

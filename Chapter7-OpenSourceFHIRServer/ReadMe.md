@@ -3,7 +3,7 @@
 This chapter shows how to setup and use Open Source FHIR Server.
 
 ## Prerequisites
-Coming soon...
+* Coming soon...
 
 FHIR Server for Azure is an open-source implementation of the emerging [HL7 Fast Healthcare Interoperability Resources (FHIR) specification[(https://www.hl7.org/fhir/) designed for the Microsoft cloud. 
 

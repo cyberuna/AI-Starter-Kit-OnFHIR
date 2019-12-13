@@ -3,9 +3,9 @@
 This chapter shows 2 options to connect and analyze health records with PowerBI.
 
 ## Prerequisites
-[PowerBI Desktop](https://powerbi.microsoft.com/en-us/downloads/)
-Knowledge of [PowerBI](https://docs.microsoft.com/en-us/power-bi/guided-learning/)
-Knowledge of [PowerQuery](https://docs.microsoft.com/en-us/power-query/) & [M formula language](https://docs.microsoft.com/en-us/powerquery-m/)
+* [PowerBI Desktop](https://powerbi.microsoft.com/en-us/downloads/)
+* Knowledge of [PowerBI](https://docs.microsoft.com/en-us/power-bi/guided-learning/)
+* Knowledge of [PowerQuery](https://docs.microsoft.com/en-us/power-query/) & [M formula language](https://docs.microsoft.com/en-us/powerquery-m/)
 
 Power BI is a business analytics service provided by Microsoft. Power BI lets you easily connect to your data sources, visualize and discover what’s important, and share with anyone you want.
 

@@ -7,7 +7,7 @@ Synthea generates HL7 FHIR records using the HAPI FHIR library to generate a FHI
 More on Synthea [here](https://github.com/synthetichealth/synthea).
 
 ## Prerequisites
-Java 1.8 (select JDK, not JRE install)
+* Java 1.8 (select JDK, not JRE install)
 
 ## Setup Synthea
 * Follow the [setup](https://github.com/synthetichealth/synthea/wiki/Basic-Setup-and-Running) instructions and download the .jar file.

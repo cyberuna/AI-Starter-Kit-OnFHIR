@@ -8,9 +8,9 @@ This chapter shows how to setup Azure API for FHIR.
 The Azure API for FHIR ingests, normalizes, secures and stores data with auditing and access controls. Data can then be easily connected together and shared.
 
 ## Prerequisites
-Access to create Azure API for FHIR
-Access to register apps in Azure Active Directory
-Postman 
+* Access to create Azure API for FHIR
+* Access to register apps in Azure Active Directory
+* Postman 
 
 ## Setup
 * [Setup Azure API for FHIR](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir-paas-portal-quickstart) to deploy FHIR service using the Azure portal.
