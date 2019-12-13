@@ -1,12 +1,12 @@
 # Chapter 6 - PowerBI: Analyze the FHIR bundles
 
-[Power BI](https://docs.microsoft.com/en-us/power-bi/fundamentals/power-bi-overview) is a business analytics service by Microsoft. Power BI lets you easily connect to your data sources, visualize and discover what’s important, and share that with anyone or everyone you want.
+[Power BI](https://docs.microsoft.com/en-us/power-bi/fundamentals/power-bi-overview) is a business analytics service provided by Microsoft. Power BI lets you easily connect to your data sources, visualize and discover what’s important, and share with anyone you want.
 
 ## Connect to SQL DB
-This option shows how 10 resource types of FHIR data that was parsed using Azure Databricks and stored in SQL DB can be analyzed inPowerBI.
+This option shows how 10 resource types of FHIR data - parsed using Azure Databricks and stored in SQL DB - can be analyzed in Power BI.
 
-* Download and open PowerBI Desktop
-* Connect to the SQL DB and use this sample query (this query uses 10 resource types), update as needed
+* Download and open Power BI Desktop
+* Connect to the SQL DB and use this sample query. This query uses 10 resource types and you can update as needed.
 
 ```
 SELECT * 
@@ -37,13 +37,13 @@ LEFT OUTER JOIN Observation OB ON E.encounterid = OB.encounterid
 LEFT OUTER JOIN ExplanationOfBenefit EOB ON C.encounterid = EOB.encounterid AND C.claimid = EOB.claimid
 LEFT OUTER JOIN Patient PT ON PT.patientid = EOB.patientid
 ```
-* Analyze and visualize using PowerBI
+* Analyze and visualize using Power BI
 
 ## Connect to Azure API for FHIR
-This option shows how to connect and analyze FHIR data that is stored in Azure API for FHIR from PowerBI desktop.
+This option shows how to connect and analyze FHIR data stored in Azure API for FHIR from Power BI desktop.
 
-* Download and open PowerBI Desktop
-* Go to Menu --> Edit Queries --> Edit Queries --> Advanced Editor and paste the below:
+* Download and open Power BI Desktop
+* Go to Menu --> Edit Queries --> Edit Queries --> Advanced Editor and paste the following:
 
 ```
 let
@@ -73,7 +73,7 @@ in
 ```
 
 * Use Power Query to parse the json and prepare the data
-* Analyze and visualize using PowerBI
+* Analyze and visualize using Power BI
  
 ***
 
