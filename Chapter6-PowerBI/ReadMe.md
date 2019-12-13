@@ -1,12 +1,19 @@
 # Chapter 6 - Power BI: Analyze the FHIR bundles
 
-[Power BI](https://docs.microsoft.com/en-us/power-bi/fundamentals/power-bi-overview) is a business analytics service provided by Microsoft. Power BI lets you easily connect to your data sources, visualize and discover what’s important, and share with anyone you want.
+This chapter shows 2 options to connect and analyze health records with PowerBI.
+
+## Prerequisites
+[PowerBI Desktop](https://powerbi.microsoft.com/en-us/downloads/)
+Knowledge of [PowerBI](https://docs.microsoft.com/en-us/power-bi/guided-learning/)
+Knowledge of [PowerQuery](https://docs.microsoft.com/en-us/power-query/) & [M formula language](https://docs.microsoft.com/en-us/powerquery-m/)
+
+Power BI is a business analytics service provided by Microsoft. Power BI lets you easily connect to your data sources, visualize and discover what’s important, and share with anyone you want.
 
 ## Connect to SQL DB
 This option shows how 10 resource types of FHIR data - parsed using Azure Databricks and stored in SQL DB - can be analyzed in Power BI.
 
-* Download and open Power BI Desktop
-* Connect to the SQL DB and use this sample query. This query uses 10 resource types and you can update as needed.
+* Open PowerBI Desktop
+* Connect to the SQL DB from PowerBI desktop and use this sample query. This query uses 10 resource types and you can update as needed.
 
 ```
 SELECT * 
@@ -39,10 +46,11 @@ LEFT OUTER JOIN Patient PT ON PT.patientid = EOB.patientid
 ```
 * Analyze and visualize using Power BI
 
+
 ## Connect to Azure API for FHIR
 This option shows how to connect and analyze FHIR data stored in Azure API for FHIR from Power BI desktop.
 
-* Download and open Power BI Desktop
+* Open Power BI Desktop
 * Go to Menu --> Edit Queries --> Edit Queries --> Advanced Editor and paste the following:
 
 ```

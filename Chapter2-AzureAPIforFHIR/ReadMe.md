@@ -1,10 +1,18 @@
 # Chapter 2 - Azure API for FHIR: Create and configure
 
+This chapter shows how to setup Azure API for FHIR.
+
 [FHIR](https://hl7.org/fhir/) standard is a new schema for US Healthcare that enables universal interoperability of EHR. FHIR ensures that data is stored in a consistent format and uses unique identifiers to connect it to related patient data so it is organized into structured data points.
 
 [Azure API for FHIR](https://docs.microsoft.com/en-us/azure/healthcare-apis/) is a managed, standards-based, compliant API for clinical health data that enables solutions for actionable analytics and machine learning.
 The Azure API for FHIR ingests, normalizes, secures and stores data with auditing and access controls. Data can then be easily connected together and shared.
 
+## Prerequisites
+Access to create Azure API for FHIR
+Access to register apps in Azure Active Directory
+Postman 
+
+## Setup
 * [Setup Azure API for FHIR](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir-paas-portal-quickstart) to deploy FHIR service using the Azure portal.
 * [Verify access to Azure API for FHIR with Postman](https://docs.microsoft.com/en-us/azure/healthcare-apis/access-fhir-postman-tutorial). Postman helps interact directly with the FHIR server as you build applications for debugging purposes.
 * [Register Applications](https://docs.microsoft.com/en-us/azure/healthcare-apis/tutorial-1-decision-flow) shows the decision flow for Azure API for FHIR.

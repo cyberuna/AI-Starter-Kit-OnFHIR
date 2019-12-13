@@ -1,5 +1,9 @@
 # Chapter 4 - Azure Data Factory: Convert bundles to delimited json (ndjson)
 
+This chapter shows how to setup Azure Data Factory and convert json files to delimited json files.
+
+## Prerequisites
+Knowledge of [Azure Data Factory](https://docs.microsoft.com/en-us/azure/data-factory/introduction)
 Azure Data Factory is a cloud data integration service that orchestrates and automates movement and transformation of data.
 
 This Data Factory is used to export resource types to [ndjson](http://ndjson.org/) files. Download the [template](./azuredeploy-adf.json) and deploy an Azure Data Factory instance using custom template deployment. The template has an array parameter called `resourceTypes`, which can be set to the resource types for which the export pipelines should be deployed.
