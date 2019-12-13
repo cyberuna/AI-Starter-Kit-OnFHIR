@@ -1,6 +1,6 @@
 # Chapter 7 - Open Source FHIR Server: Create and Configure
 
-This chapter shows how to setup and use Open Source FHIR Server.
+#### This chapter shows how to setup and use Open Source FHIR Server.
 
 ## Prerequisites
 * Coming soon...

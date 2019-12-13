@@ -1,6 +1,6 @@
 # Chapter 5 - Azure Databricks: Parse json and load into Azure SQL DB
 
-This chapter shows how to setup Azure Databricks, parse and load health records into Azure SQL DB.
+#### This chapter shows how to setup Azure Databricks, parse and load health records into Azure SQL DB.
 
 ## Prerequisites
 * Knowledge of [Azure Databricks](https://docs.microsoft.com/en-us/azure/azure-databricks/what-is-azure-databricks)

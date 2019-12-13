@@ -1,6 +1,6 @@
 # Chapter 3 - Azure Blob Storage and Azure Function: Ingest data into Azure API for FHIR
 
-This chapter shows how to setup Azure Function and Azure Blob Storage to ingest data into Azure API for FHIR.
+#### This chapter shows how to setup Azure Function and Azure Blob Storage to ingest data into Azure API for FHIR.
 
 ## Prerequisites
 * Knowledge of [Azure Function](https://docs.microsoft.com/en-us/azure/azure-functions/)

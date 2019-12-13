@@ -1,6 +1,6 @@
 # Chapter 6 - Power BI: Analyze the FHIR bundles
 
-This chapter shows 2 options to connect and analyze health records with PowerBI.
+#### This chapter shows 2 options to connect and analyze health records with PowerBI.
 
 ## Prerequisites
 * [PowerBI Desktop](https://powerbi.microsoft.com/en-us/downloads/)

@@ -1,6 +1,6 @@
 # Chapter 2 - Azure API for FHIR: Create and configure
 
-This chapter shows how to setup Azure API for FHIR.
+#### This chapter shows how to setup Azure API for FHIR.
 
 [FHIR](https://hl7.org/fhir/) standard is a new schema for US Healthcare that enables universal interoperability of EHR. FHIR ensures that data is stored in a consistent format and uses unique identifiers to connect it to related patient data so it is organized into structured data points.
 
