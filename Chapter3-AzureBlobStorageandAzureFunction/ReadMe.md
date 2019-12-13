@@ -3,10 +3,10 @@
 ## Azure Function
 [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/) is a serverless compute service that lets you run event-triggered code without having to explicitly provision or manage infrastructure.
 
-This Azure function app is created to monitor the storage account, and ingest any FHIR bundles uploaded to the container into the Azure API for FHIR service.
+This Azure Function is created to monitor the storage account, and ingest any FHIR bundles uploaded to the container into the Azure API for FHIR service.
 
 
-Deploy the function using the template [azuredeploy-importer.json](./azuredeploy-importer.json) using [Azure Resource Manager in Azure Portal](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy-portal#deploy-resources-from-custom-template). This template will deploy a storage account, application insights and the function in an Azure Container Instance. 
+Deploy the function using the template [azuredeploy-importer.json](./azuredeploy-importer.json) using [Azure Resource Manager in Azure Portal](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy-portal#deploy-resources-from-custom-template). This template will deploy an Azure Storage account, Application Insights and the Function in an Azure Container Instance. 
 
 When deploying, the following environment variables should be set:
 
