@@ -2,7 +2,7 @@
 
 Synthea is an open-source synthetic patient and associated health records generator that simulates the medical history of synthetic patients.
 Synthea generates HL7 FHIR records using the HAPI FHIR library to generate a FHIR Bundle for [these](https://github.com/synthetichealth/synthea/wiki/HL7-FHIR) FHIR Resources.
-More on synthea [here](https://github.com/synthetichealth/synthea).
+More on Synthea [here](https://github.com/synthetichealth/synthea).
 
 ## Setup Synthea
 * Follow the [setup](https://github.com/synthetichealth/synthea/wiki/Basic-Setup-and-Running) instructions and download the .jar file.
