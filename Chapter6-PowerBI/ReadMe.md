@@ -1,4 +1,4 @@
-# Chapter 6 - PowerBI: Analyze the FHIR bundles
+# Chapter 6 - Power BI: Analyze the FHIR bundles
 
 [Power BI](https://docs.microsoft.com/en-us/power-bi/fundamentals/power-bi-overview) is a business analytics service provided by Microsoft. Power BI lets you easily connect to your data sources, visualize and discover what’s important, and share with anyone you want.
 
