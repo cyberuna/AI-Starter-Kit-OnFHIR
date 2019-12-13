@@ -1,6 +1,6 @@
 # OnFHIR - Starter Kit for Azure API for FHIR 
 
-##### This respository contains example code and scenarios demonstrating capabilities of the [Azure API for FHIR](https://docs.microsoft.com/azure/healthcare-apis) PaaS server to populate and consume patient and financial data. 
+#### This respository contains example code and scenarios demonstrating capabilities of the [Azure API for FHIR](https://docs.microsoft.com/azure/healthcare-apis) PaaS server to populate and consume patient and financial data. 
 Some of the sample code used here is from the [FHIR Server Samples](https://github.com/microsoft/fhir-server-samples).
 
 The high level solution architecture includes: 
