@@ -6,6 +6,8 @@ Synthea is an open-source synthetic patient and associated health records genera
 Synthea generates HL7 FHIR records using the HAPI FHIR library to generate a FHIR Bundle for [these](https://github.com/synthetichealth/synthea/wiki/HL7-FHIR) FHIR Resources.
 More on Synthea [here](https://github.com/synthetichealth/synthea).
 
+By default, Synthea contains publicly available demographic data obtained from the US Census Bureau. The data was post-processed to create population input data for every place (town and city) in the United States. This post-processed data can be used with Synthea to generate representative populations. (County + SubCounty + Education + Income)
+
 ## Prerequisites
 * Java 1.8 (select JDK, not JRE install)
 
