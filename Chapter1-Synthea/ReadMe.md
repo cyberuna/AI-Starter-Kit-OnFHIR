@@ -6,7 +6,7 @@ Synthea is an open-source synthetic patient and associated health records genera
 Synthea generates HL7 FHIR records using the HAPI FHIR library to generate a FHIR Bundle for [these](https://github.com/synthetichealth/synthea/wiki/HL7-FHIR) FHIR Resources.
 More on Synthea [here](https://github.com/synthetichealth/synthea).
 
-By default, Synthea contains publicly available demographic data obtained from the US Census Bureau. The data was post-processed to create population input data for every place (town and city) in the United States. This post-processed data can be used with Synthea to generate representative populations. (County + SubCounty + Education + Income).
+By default, Synthea contains publicly available demographic data obtained from the US Census Bureau. The data was post-processed to create population input data for every place (town and city) in the United States. This post-processed data can be used with Synthea to generate representative populations. (County + SubCounty + Education + Income).  See https://github.com/synthetichealth/synthea/wiki/Default-Demographic-Data for details.
 
 ## Prerequisites
 * Java 1.8 (select JDK, not JRE install)
@@ -14,8 +14,29 @@ By default, Synthea contains publicly available demographic data obtained from t
 ## Setup Synthea
 * Follow the [setup](https://github.com/synthetichealth/synthea/wiki/Basic-Setup-and-Running) instructions and download the .jar file.
 * Copy [synthea.properties](./synthea.properties) file to the same location as the .jar file downloaded above.
-* Run the jar file with the parameters. Example: java -jar synthea-with-dependencies.jar -s 1048576 -p 100 Texas -c <path>\synthea.properties . More examples in the link above.
+* Run the 'run_synthea' batch file with the parameters. run_synthea [-h][-s seed] 
+            [-cs clinician seed]
+            [-p populationSize]
+            [-g gender]
+            [-a minAge-maxAge]
+            [-m moduleFilter]
+            [-c localConfigFilePath]
+            [-d localModulesDirPath]
+            [state [city]]. More examples in the link above.
+* (Optionally) configure the United States source demographics *.csv data with entries helpful to your subject demographics:
+    * [Provider](https://github.com/synthetichealth/synthea/wiki/Provider-Data)
+    * [Payer](https://github.com/synthetichealth/synthea/wiki/Payer-Data)
+    * [Cost Data - Encounter, Procedure, Medication, Immunization, Regional Adjustment Factors](https://github.com/synthetichealth/synthea/wiki/Cost-Data)
+    * [Person Name](https://github.com/synthetichealth/synthea/wiki/Name-Data)
+    * [Zip/Postal code](https://github.com/synthetichealth/synthea/wiki/Zip-or-Postal-Codes) 
 * Output json files will be saved in output folder in the same directory.
+
+
+Detailed Example: 
+
+-> Generate data for 100 patients using a seed (unique root of data generation) of 777 in Texas using the associated synthea properties settings
+
+.\run_synthea -s 777 -p 100 Texas -c [/synthea.properties](./synthea.properties)
 
 ***
 
