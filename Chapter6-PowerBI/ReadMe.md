@@ -100,19 +100,19 @@ Getting Started
 * Open PowerBI Desktop
 * Connect to the Azure Data Lake Storage Account from PowerBI desktop using the Azure Data Lake (Gen2) Connector via the GetData Option.
 
-<center><img src="../images/GetDatafromDataLake.PNG" width="600"></center>
+<center><img src="../images/GetDatafromDataLake.png" width="600"></center>
 
 * Connect to the Azure Data Lake Storage Account from PowerBI desktop using the Azure Data Lake (Gen2) Connector via the GetData Option.  
 
 Note:  Make sure you specify the full path to the container and/or folder in the container (for example: \<adfsgen2 url\>/\<container\>/\<folder/subfolder\>), otherwise you get a cryptic error: 
 
-<center><img src="../images/DataLakeConnectError.PNG" width="600"></center>
+<center><img src="../images/DataLakeConnectError.png" width="600"></center>
 
 I like to create a powerbi folder in my ADLS Gen2 and place the json files there.  My path looks like this https://***.dfs.core.windows.net/powerbi/fhirlimited
 
 When you get it right you'll be presented with an option to combine and transform the source json data for query.
 
-<center><img src="../images/CombineAndTransform.PNG" width="600"></center>
+<center><img src="../images/CombineAndTransform.png" width="600"></center>
 
 * Start working with the bundles. 
 
@@ -125,39 +125,39 @@ You should end up in PowerBI Query Editor with the results of your query
 
 * Next reference the original query and name it Bundles. 
 
-<center><img src="../images/BundleQueryReference.PNG" width="800"></center>
+<center><img src="../images/BundleQueryReference.png" width="800"></center>
 
 * Next filter out Bundle and Collection values because we are looking for the data within the entry nodes of the json (click the dropdown next to the column Value and unselect Bundle and Collection)
 
 * Next expand the remaining (entry) list into new records to reveal the fullUrl and the resource itself
 
-<center><img src="../images/BundleQueryReferenceFilterBundleCollection.PNG" width="800"></center>
-<center><img src="../images/BundleQueryReferenceFilterBundleCollectionParts.PNG" width="800"></center>
+<center><img src="../images/BundleQueryReferenceFilterBundleCollection.png" width="800"></center>
+<center><img src="../images/BundleQueryReferenceFilterBundleCollectionParts.png" width="800"></center>
 
 
 * Next duplicate the Value.resource column so we get access to the resourceType by expanding the duplicate revealing only the resourceType value
 
-<center><img src="../images/BundleQueryDuplicateColumn.PNG" width="800"></center>
-<center><img src="../images/BundleQueryResourceType.PNG" width="800"></center>
-<center><img src="../images/ResourceTypes.PNG" width="800"></center>
+<center><img src="../images/BundleQueryDuplicateColumn.png" width="800"></center>
+<center><img src="../images/BundleQueryResourceType.png" width="800"></center>
+<center><img src="../images/ResourceTypes.png" width="800"></center>
 
 * Next lets reference our Bundles Query and name the reference Patients that only shows Patient resources by filtering for Patient.  Then we will expand 'record' and 'list' for each patient and including all values that can futher be expanded (I've expanded resource.name to reveal use, family, etc..)
 
-<center><img src="../images/PatientResources.PNG" width="800"></center>
-<center><img src="../images/PatientResourcesExpanding.PNG" width="800"></center>
-<center><img src="../images/PatientResourcesExpandingName.PNG" width="800"></center>
+<center><img src="../images/PatientResources.png" width="800"></center>
+<center><img src="../images/PatientResourcesExpanding.png" width="800"></center>
+<center><img src="../images/PatientResourcesExpandingName.png" width="800"></center>
 
 Repeatedly expanding further areas of the model allows for us to investigate FHIR resources and the types used with types (in this case a Patient Type and the Name type)
 
 *Next perform the same steps for the Claim Resource type and the Explanation of Benefits type and expand their resource.patient values, so that we can expose those values and build many-to-many relationships between Patient, Claim, and EOB within our model
 
-<center><img src="../images/ClaimResourceExpandPatient.PNG" width="800"></center>
-<center><img src="../images/ClaimResourceExpandValue.PNG" width="800"></center>
+<center><img src="../images/ClaimResourceExpandPatient.png" width="800"></center>
+<center><img src="../images/ClaimResourceExpandValue.png" width="800"></center>
 
 *Once you get a few types expanded and the references setup properly you'll end up with a model that you can navigate with the goal of exploring and building quick reports and dashboards to further explore
 
-<center><img src="../images/ModelwithRelations.PNG" width="800"></center>
-<center><img src="../images/PatientFinancialDashboard.PNG" width="800"></center>
+<center><img src="../images/ModelwithRelations.png" width="800"></center>
+<center><img src="../images/PatientFinancialDashboard.png" width="800"></center>
 
 
 
