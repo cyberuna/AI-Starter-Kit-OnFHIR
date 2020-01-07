@@ -92,7 +92,7 @@ This option shows how to connect and analyze FHIR data stored in Azure Data Lake
 * Knowledge of [Storage Explorer](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-explorer/)
 * Knowledge of [PowerQuery](https://docs.microsoft.com/en-us/power-query/)
 
-NOTE:  If included the resulting [FHIR Financial Example](./FHIRFinancialExample.pbix) pbix file from the steps below so you can start with a working example.  Make sure you change the path to your data lake and ensure you've properly setup the permissions for your account using that link.
+NOTE:  I've included the resulting [FHIR Financial Example](./FHIRFinancialExample.pbix) pbix file from the steps below so you can start with a working example.  Make sure you change the path to your data lake and ensure you've properly setup the permissions for your account using that link.  Also make sure you've placed some json bundles there as well.
 
 Getting Started
 
