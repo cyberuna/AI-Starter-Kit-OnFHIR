@@ -120,7 +120,7 @@ Note:  Your source names will be different because your using your generated dat
 
 You should end up in PowerBI Query Editor with the results of your query
 
-<center><img src="../images/BundleQuery.PNG" width="800"></center>
+<center><img src="../images/BundleQuery.png" width="800"></center>
 
 
 * Next reference the original query and name it Bundles. 
