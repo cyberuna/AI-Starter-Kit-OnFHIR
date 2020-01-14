@@ -46,6 +46,7 @@ LEFT OUTER JOIN Patient PT ON PT.patientid = EOB.patientid
 ```
 * Analyze and visualize using Power BI
 
+***
 
 ## Option 2: Connect to Azure API for FHIR
 This option shows how to connect and analyze FHIR data stored in Azure API for FHIR from Power BI desktop.
@@ -83,6 +84,7 @@ in
 * Use Power Query to parse the json and prepare the data
 * Analyze and visualize using Power BI
 
+***
 
 ## Option 3: Connect to Azure Data Lake storing FHIR JSON Bundles
 This option shows how to connect and analyze FHIR data stored in Azure Data Lake from Power BI desktop.
