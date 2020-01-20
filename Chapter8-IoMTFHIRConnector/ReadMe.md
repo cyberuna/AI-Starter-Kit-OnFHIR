@@ -10,7 +10,7 @@ Privacy and security are top priorities and the IoMT FHIR Connector for Azure ha
 
 ## Architecture
 
-<center><img src="../images/IoMTConnectorforFHIR.png" width="650" height="280"></center>
+<center><img src="../images/IoMTConnectorforFHIR.png" width="750" height="300"></center>
 
 * **Ingest**: Device data from IoT Central is ingested into an Event Hub `devicedata`. Event Hub throughput units can be scaled based on the message volume.
 * **Normalization**: Device data in Event Hub `devicedata` is processed and compared using [device content](../deploy/devicecontent.json) configuration file using Azure Function `NormalizeDeviceData`. Types, values, and other important information are extracted into a common format for further processing.
