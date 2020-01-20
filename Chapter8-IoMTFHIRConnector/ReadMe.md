@@ -10,7 +10,7 @@ Privacy and security are top priorities and the IoMT FHIR Connector for Azure ha
 
 ## Architecture
 
-<center><img src="../images/IoMTConnectorforFHIR.png" width="650" height="300"></center>
+<center><img src="../images/IoMTConnectorforFHIR.png" width="650" height="250"></center>
 
 * **Ingest**: Device data from IoT Central is ingested into an Event Hub `devicedata`. Event Hub throughput units can be scaled based on the message volume.
 * **Normalization**: Device data in Event Hub `devicedata` is processed and compared using [device content](../deploy/devicecontent.json) configuration file using Azure Function `NormalizeDeviceData`. Types, values, and other important information are extracted into a common format for further processing.
@@ -25,6 +25,7 @@ More details on [Azure API for FHIR](https://docs.microsoft.com/en-us/azure/heal
 * Deploy **[IoMT FHIR Connector for Azure using ARM Template](https://github.com/microsoft/iomt-fhir/blob/master/docs/ARMInstallation.md)**\
 This ARM Template is for easy provisioning of an environment within Azure. 
 Note: Resource Location is required. Choose the right [Resource Identity Service Type](https://github.com/microsoft/iomt-fhir/blob/master/docs/ARMInstallation.md#resource-identity-service-type) based on if patient and device data already exists in your FHIR server.\
+
 When executed, the ARM template will provision the following:\
 -- App Service Plan - The service plan used for hosting the Azure Functions Web app.\
 -- Azure Web App - The web app running the Azure Functions responsible for normalization and FHIR conversion.\
@@ -34,18 +35,18 @@ When executed, the ARM template will provision the following:\
 -- Azure Storage - Used by the Azure Functions to track Event Hub processing watermark and also hosts the configuration files for device normalization mapping and FHIR conversion mapping.\
 -- App Insights - Used to record telemetry.
 
-* **Configuration Templates**\
+* **Configure templates**\
 The IoMT FHIR Connector for Azure requires two JSON configuration files. Use Azure Portal or Azure Storage Explorer to upload these two configuration files to the storage container "template" created under the blob storage account provisioned during the ARM template deployment. Configuration files are loaded from blob per compute execution. Once updated they should take effect immediately.\
 -- [device content](../deploy/devicecontent.json) which is responsible for mapping the payloads sent to the Event Hub end point and extracting types, device identifiers, measurement date time, and the measurement value(s). Used for normalization by Azure Function `NormalizeDeviceData`.\
 -- [FHIR mapping](../deploy/fhirmapping.json) which allows configuration of the length of the observation period, FHIR data type used to store the values, and code(s). Used for FHIR conversion by Azure Function `MeasurementCollectionToFhir`.
 
-* **IoMT FHIR Connector for Azure with IoT Central:**\
+* **Setup app in IoT Central:**\
 Use the [continuous data export](https://docs.microsoft.com/en-us/azure/iot-central/core/howto-export-data-pnp) feature in IoT Central to export data to Event Hub.  The target endpoint will be the `devicedata` Event Hub.  When selecting the types of data to export only *Telemetry* is needed.  Device and templates can be left unchecked. 
 
-* **Verification:**\
+* **Verify:**\
 After a few minutes, use Postman or other tool to check the FHIR server for observations from simulated devices. Ex: GET request with https://<fhirserver>.azurehealthcareapis.com/Observation.
 
-* **Monitoring:**\
+* **Monitor:**\
 -- Check Application Insights metrics for errors and telemetry for logical components of the connector, Event Hubs for number of messages received and sent and Stream Analytics for the watermark delay along with input and output events.\
 -- If messages are in `devicedata` but not in `normalizeddata`, then `devicecontent.json` templete is not in the Blob Storage or isn't matching the payload sent from the device.\
 -- If FHIR conversion is not called, Stream Analytics has a buffering code for 5 minutes in the last line of the query. Give it time and check again.\
