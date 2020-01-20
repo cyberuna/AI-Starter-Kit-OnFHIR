@@ -38,13 +38,13 @@ The IoMT FHIR Connector for Azure requires two JSON configuration files. Use Azu
 -- [device content](../deploy/devicecontent.json) which is responsible for mapping the payloads sent to the Event Hub end point and extracting types, device identifiers, measurement date time, and the measurement value(s). Used for normalization by Azure Function `NormalizeDeviceData`.\
 -- [FHIR mapping](../deploy/fhirmapping.json) which allows configuration of the length of the observation period, FHIR data type used to store the values, and code(s). Used for FHIR conversion by Azure Function `MeasurementCollectionToFhir`.
 
-* **Setup app in IoT Central:**\
+* **Setup app in IoT Central**\
 Use the [continuous data export](https://docs.microsoft.com/en-us/azure/iot-central/core/howto-export-data-pnp) feature in IoT Central to export data to Event Hub.  The target endpoint will be the `devicedata` Event Hub.  When selecting the types of data to export only *Telemetry* is needed.  Device and templates can be left unchecked. 
 
-* **Verify:**\
-After a few minutes, use Postman or other tool to check the FHIR server for observations from simulated devices. Ex: GET request with https://<fhirserver>.azurehealthcareapis.com/Observation.
+* **Verify**\
+After a few minutes, use Postman or other tool to check the FHIR server for observations from simulated devices. Ex: GET request with FHIR Server URL: https://<fhirserver>.azurehealthcareapis.com/Observation, client id and client secret.
 
-* **Monitor:**\
+* **Monitor**\
 -- Check Application Insights metrics for errors and telemetry for logical components of the connector, Event Hubs for number of messages received and sent and Stream Analytics for the watermark delay along with input and output events.\
 -- If messages are in `devicedata` but not in `normalizeddata`, then `devicecontent.json` templete is not in the Blob Storage or isn't matching the payload sent from the device.\
 -- If FHIR conversion is not called, Stream Analytics has a buffering code for 5 minutes in the last line of the query. Give it time and check again.\
