@@ -10,7 +10,7 @@ Privacy and security are top priorities and the IoMT FHIR Connector for Azure ha
 
 ## Architecture
 
-<center><img src="../images/IoMTConnectorforFHIR.png" width="650" height="400"></center>
+<center><img src="../images/IoMTConnectorforFHIR.png" width="650" height="300"></center>
 
 * **Ingest**: Device data from IoT Central is ingested into an Event Hub `devicedata`. Event Hub throughput units can be scaled based on the message volume.
 * **Normalization**: Device data in Event Hub `devicedata` is processed and compared using [device content](../deploy/devicecontent.json) configuration file using Azure Function `NormalizeDeviceData`. Types, values, and other important information are extracted into a common format for further processing.
@@ -25,13 +25,13 @@ More details on [Azure API for FHIR](https://docs.microsoft.com/en-us/azure/heal
 * Deploy **[IoMT FHIR Connector for Azure using ARM Template](https://github.com/microsoft/iomt-fhir/blob/master/docs/ARMInstallation.md)**\
 This ARM Template is for easy provisioning of an environment within Azure. 
 Note: Resource Location is required. Choose the right [Resource Identity Service Type](https://github.com/microsoft/iomt-fhir/blob/master/docs/ARMInstallation.md#resource-identity-service-type) based on if patient and device data already exists in your FHIR server.\
-When executed, the ARM template will provision the following:
--- App Service Plan - The service plan used for hosting the Azure Functions Web app.
--- Azure Web App - The web app running the Azure Functions responsible for normalization and FHIR conversion.
--- Azure Event Hubs - Two Event Hubs are deployed. `devicedata` is the initial ingestion point for device data. `normalizeddata` receives normalized device data for further processing.
--- Azure Stream Analytics - Used to group and buffer the normalized data stream. Controls the end to end latency between device data ingested and landing the data in the configured FHIR server.
--- Azure Key Vault - Used for secret storage. Event Hub Shared Access Keys and the OAuth client credentials are stored here.
--- Azure Storage - Used by the Azure Functions to track Event Hub processing watermark and also hosts the configuration files for device normalization mapping and FHIR conversion mapping.
+When executed, the ARM template will provision the following:\
+-- App Service Plan - The service plan used for hosting the Azure Functions Web app.\
+-- Azure Web App - The web app running the Azure Functions responsible for normalization and FHIR conversion.\
+-- Azure Event Hubs - Two Event Hubs are deployed. `devicedata` is the initial ingestion point for device data. `normalizeddata` receives normalized device data for further processing.\
+-- Azure Stream Analytics - Used to group and buffer the normalized data stream. Controls the end to end latency between device data ingested and landing the data in the configured FHIR server.\
+-- Azure Key Vault - Used for secret storage. Event Hub Shared Access Keys and the OAuth client credentials are stored here.\
+-- Azure Storage - Used by the Azure Functions to track Event Hub processing watermark and also hosts the configuration files for device normalization mapping and FHIR conversion mapping.\
 -- App Insights - Used to record telemetry.
 
 * **Configuration Templates**\
@@ -51,7 +51,7 @@ After a few minutes, use Postman or other tool to check the FHIR server for obse
 -- If FHIR conversion is not called, Stream Analytics has a buffering code for 5 minutes in the last line of the query. Give it time and check again.\
 -- If FHIR conversion is called but don't see observations in FHIR server, check the configuration `ResourceIdentity:ResourceIdentityServiceType` in Function App. Default is `R4DeviceAndPatientLookupIdentityService` in ARM Template. Check if a device resource is properly created and is linked to a patient resource in the FHIR server. The device id extracted by the template should match the device identifier on device resource in FHIR. Change to `R4DeviceAndPatientCreateIdentityService` to create a shell patient and device resources will be created.
 More on [Resource Identity Service Type](https://github.com/microsoft/iomt-fhir/blob/master/docs/ARMInstallation.md#resource-identity-service-type).\
-Some of the above are handled and might not show as error. More on [debugging](https://github.com/microsoft/iomt-fhir/blob/master/docs/Debugging.md#debugging)
+Some of the above are handled and might not show as error in metrics. More on [debugging](https://github.com/microsoft/iomt-fhir/blob/master/docs/Debugging.md#debugging).
 
 *** 
 
