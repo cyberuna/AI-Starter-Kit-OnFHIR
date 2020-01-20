@@ -10,7 +10,7 @@ Privacy and security are top priorities and the IoMT FHIR Connector for Azure ha
 
 ## Architecture
 
-<center><img src="../images/IoMTConnectorforFHIR.png" width="650" height="250"></center>
+<center><img src="../images/IoMTConnectorforFHIR.png" width="650" height="280"></center>
 
 * **Ingest**: Device data from IoT Central is ingested into an Event Hub `devicedata`. Event Hub throughput units can be scaled based on the message volume.
 * **Normalization**: Device data in Event Hub `devicedata` is processed and compared using [device content](../deploy/devicecontent.json) configuration file using Azure Function `NormalizeDeviceData`. Types, values, and other important information are extracted into a common format for further processing.
@@ -24,9 +24,7 @@ More details on [Azure API for FHIR](https://docs.microsoft.com/en-us/azure/heal
 
 * Deploy **[IoMT FHIR Connector for Azure using ARM Template](https://github.com/microsoft/iomt-fhir/blob/master/docs/ARMInstallation.md)**\
 This ARM Template is for easy provisioning of an environment within Azure. 
-Note: Resource Location is required. Choose the right [Resource Identity Service Type](https://github.com/microsoft/iomt-fhir/blob/master/docs/ARMInstallation.md#resource-identity-service-type) based on if patient and device data already exists in your FHIR server.\
-
-When executed, the ARM template will provision the following:\
+Note: Resource Location is required. Choose the right [Resource Identity Service Type](https://github.com/microsoft/iomt-fhir/blob/master/docs/ARMInstallation.md#resource-identity-service-type) based on if patient and device data already exists in your FHIR server. When executed, the ARM template will provision the following:\
 -- App Service Plan - The service plan used for hosting the Azure Functions Web app.\
 -- Azure Web App - The web app running the Azure Functions responsible for normalization and FHIR conversion.\
 -- Azure Event Hubs - Two Event Hubs are deployed. `devicedata` is the initial ingestion point for device data. `normalizeddata` receives normalized device data for further processing.\
