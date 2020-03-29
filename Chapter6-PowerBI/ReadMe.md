@@ -51,7 +51,7 @@ LEFT OUTER JOIN Patient PT ON PT.patientid = EOB.patientid
 ## Option 2: Connect to Azure API for FHIR
 This option shows how to connect and analyze FHIR data stored in Azure API for FHIR from Power BI desktop.
 
-## Option 2.1: Using FHIR connector
+### Option 2.1: Using Power Query connector for FHIR
 * Open Power BI Desktop
 * Click GetData, search for "FHIR", select FHIR and Click Connect
 * Enter the URL of the FHIR server: https://<myfhir>.azurehealthcareapis.com. Query for the FHIR server is optional. Click OK.
@@ -60,7 +60,7 @@ This option shows how to connect and analyze FHIR data stored in Azure API for F
 * Use Power Query to parse the json and prepare the data. See Option 3 below.
 * Analyze and visualize using Power BI
 
-## Option 2.2: Using M code
+### Option 2.2: Using M code
 * Open Power BI Desktop
 * Go to Menu --> Edit Queries --> Edit Queries --> Advanced Editor and paste the following:
 
