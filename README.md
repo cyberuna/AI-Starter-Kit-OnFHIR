@@ -4,10 +4,12 @@
 Some of the sample code used here is from the [FHIR Server Samples](https://github.com/microsoft/fhir-server-samples).
 
 The high level solution architecture includes: 
-#### * Generate Data: Generate FHIR data using Synthea
-#### * Ingest Data: Upload the generated data into Azure Blob Storage. Ingest into Azure API for FHIR using an Azure Function
-#### * Store Data: Store FHIR data in Azure API for FHIR service
+#### * Generate Data: Generate FHIR data using Synthea.
+#### * Ingest Data: Upload the generated data into Azure Blob Storage. Ingest into Azure API for FHIR using an Azure Function.
+#### * Store Data: Store FHIR data in Azure API for FHIR service.
 #### * Prepare and Analyze Data: Prepare data using Azure Data Factory and Azure Databricks. Store in Azure SQL DB. Analyze using PowerBI.
+#### * IoMT Connector: Ingest data from IoMT (internet of medical things) devices and persist the data in a FHIR® server.
+#### * Appointment Scheduler: Allow users to schedule an appointment using FHIR.
 
 <center><img src="images//azure-api-fhir-paas.png" width="850"></center>
 
@@ -23,6 +25,8 @@ Azure Subscription is required to complete this starter kit. Azure Subscription 
 * [Chapter 5 - Azure Databricks: Parse json and load into Azure SQL DB](./Chapter5-AzureDatabricks/ReadMe.md)
 * [Chapter 6 - PowerBI: Analyze the FHIR bundles](./Chapter6-PowerBI/ReadMe.md)
 * [Chapter 7 - Open Source FHIR Server: Create and Configure](./Chapter7-OpenSourceFHIRServer/ReadMe.md)
+* [Chapter 8 - IoMT FHIR Connector: Ingest and Persist](./Chapter8-IoMTFHIRConnector/ReadMe.md)
+* [Chapter 9 - Healthcare Bot: Appointment Scheduler](./Chapter9-HealthcareBot/ReadMe.md)
 
 # Contributing
 

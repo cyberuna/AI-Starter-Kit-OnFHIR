@@ -1,0 +1,416 @@
+{
+  "version": 3,
+  "steps": [
+    {
+      "id": "4676f5c0f77c-ec78307880be5a9a-d793",
+      "type": "prompt",
+      "dataType": "object",
+      "designer": {
+        "xLocation": 392,
+        "yLocation": 20,
+        "next": "a291d882f045-dc43d4d11d6f3ded-8d8d"
+      },
+      "text": "Developer notice:",
+      "variable": "Consent",
+      "stringId": "stringId_0cc175b9c0f1b6a8",
+      "layout": "vertical",
+      "attachment": [
+        {
+          "type": "AdaptiveCard",
+          "cardCode": "{\r\n    \"type\": \"AdaptiveCard\",\r\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\r\n    \"version\": \"1.0\",\r\n    \"body\": [\r\n        {\r\n            \"type\": \"TextBlock\",\r\n            \"size\": \"Medium\",\r\n            \"weight\": \"Bolder\",\r\n            \"text\": \"Scheduling medical appointments \"\r\n        },\r\n        {\r\n            \"type\": \"TextBlock\",\r\n            \"text\": \"With Healthcare Bot appointment scheduling you can allow users to schedule an appointment with a healthcare provider without leaving the conversation. \\n\\n\",\r\n            \"wrap\": true\r\n        },\r\n        {\r\n            \"type\": \"TextBlock\",\r\n            \"text\": \"This template contains the structure for creating an appointment scheduling bot using FHIR. Note that the business rules for displaying availability should be handled separately.\",\r\n            \"wrap\": true\r\n        }\r\n    ],\r\n    \"actions\": [\r\n    {\r\n      \"type\": \"Action.Submit\",\r\n      \"title\": \"Continue\"\r\n    }\r\n  ]\r\n    \r\n}"
+        }
+      ],
+      "label": "Notice"
+    },
+    {
+      "id": "a291d882f045-dc43d4d11d6f3ded-8d8d",
+      "type": "prompt",
+      "dataType": "['Yes', 'No']",
+      "designer": {
+        "xLocation": 391,
+        "yLocation": 80,
+        "listStyle": 3,
+        "next": "9ec4f8beae25-c4b4a989620942c7-e56a"
+      },
+      "text": "Welcome to the Imaging department at Contoso Hospital & Medical Center!  \r\n\r\nMay I help you schedule an appointment for one of our imaging services?   ",
+      "variable": "userConsent",
+      "choiceType": "choice",
+      "stringId": "stringId_518d5658a0ba0441",
+      "label": "Welcome"
+    },
+    {
+      "id": "20737162a687-2f88f90ae4ff837e-e760",
+      "type": "action",
+      "label": "serviceTypes",
+      "designer": {
+        "xLocation": 480,
+        "yLocation": 220,
+        "next": "029e12761327-6763f043cf49e6cf-8fba"
+      },
+      "onInit": "scenario.availableServiceTypes = {\r\n    \"Breast Screen\": {\r\n        \"code\": \"272\"\r\n    },\r\n    \"Computed Tomography Scan (CT)\": {\r\n        \"code\": \"209\"\r\n    },\r\n    \"Fluoroscopy\": {\r\n        \"code\": \"209\"\r\n    },\r\n    \"Nuclear Medicine\": {\r\n        \"code\": \"212\"\r\n    },\r\n    \"Diagnostic Ultrasound\": {\r\n        \"code\": \"210\"\r\n    },\r\n    \"X-Ray\": {\r\n        \"code\": \"209\"\r\n    }\r\n};",
+      "visible": true,
+      "async": false
+    },
+    {
+      "id": "029e12761327-6763f043cf49e6cf-8fba",
+      "type": "prompt",
+      "dataType": "scenario.availableServiceTypes",
+      "designer": {
+        "xLocation": 480,
+        "yLocation": 320,
+        "listStyle": 3,
+        "next": "a4cd62f4eb68-a23ce3da2e73a626-eb44"
+      },
+      "text": "Please select a service from the below list:",
+      "variable": "selectedServiceType",
+      "stringId": "stringId_c1bc631fae12f7df",
+      "choiceType": "choice",
+      "label": "Select type"
+    },
+    {
+      "id": "98f942e5014a-f5622096aa0f267b-d372",
+      "type": "datasource",
+      "designer": {
+        "xLocation": 571,
+        "yLocation": 760,
+        "next": "dd09d52444f0-6127784ad52de326-2f2d",
+        "errorStepId": "2f9ad59f5d8d-db37c9a2f31b7797-e4b8"
+      },
+      "dataConnection": "FHIRAR4",
+      "urlPath": "Slot",
+      "urlParams": "`schedule=${scenario.selectedSchedule.id}`",
+      "method": "get",
+      "headers": "",
+      "opJson": true,
+      "opResolveWithFullResponse": false,
+      "response": "availableSlotsReponse",
+      "label": "Get slots",
+      "fhirAction": "Read",
+      "fhirResource": "Slot",
+      "payload": "/* fill the missing fields */\nFHIR({\n  \"resourceType\": \"Slot\"\n});",
+      "authenticationProvider": "FHIRAR4 server auth-provider"
+    },
+    {
+      "id": "a4cd62f4eb68-a23ce3da2e73a626-eb44",
+      "type": "action",
+      "label": "Get code",
+      "designer": {
+        "xLocation": 487,
+        "yLocation": 400,
+        "next": "6ac2ba046181-2526d0a87345aea7-13d5"
+      },
+      "onInit": "scenario.selectedServiceTypeCode = scenario.availableServiceTypes[scenario.selectedServiceType.entity].code;",
+      "visible": true,
+      "async": false
+    },
+    {
+      "id": "7ac438cb489c-4e926184a815dc4c-bf64",
+      "type": "statement",
+      "designer": {
+        "xLocation": 294,
+        "yLocation": 231
+      },
+      "text": "You have chosen to not schedule an appointment.\r\n\r\nIf you have any further questions, please don’t hesitate to contact me.",
+      "stringId": "stringId_7dd2bb2c580ab0dc"
+    },
+    {
+      "id": "2f9ad59f5d8d-db37c9a2f31b7797-e4b8",
+      "type": "statement",
+      "designer": {
+        "xLocation": 420,
+        "yLocation": 840
+      },
+      "text": "I was not able to find open slots, please try again later.",
+      "stringId": "stringId_761a6f4fd3c3d1f5"
+    },
+    {
+      "id": "6ac2ba046181-2526d0a87345aea7-13d5",
+      "type": "datasource",
+      "designer": {
+        "xLocation": 480,
+        "yLocation": 500,
+        "next": "3bda2d4cee0a-0d4b3b532fcf2fc9-4c51"
+      },
+      "dataConnection": "FHIRAR4",
+      "urlPath": "Schedule",
+      "urlParams": "`service-type=${scenario.selectedServiceTypeCode}`",
+      "method": "get",
+      "headers": "",
+      "opJson": true,
+      "opResolveWithFullResponse": false,
+      "response": "availableSchedulesResponse",
+      "label": "Get schedules",
+      "fhirAction": "Read",
+      "fhirResource": "Schedule",
+      "payload": "/* fill the missing fields */\nFHIR({\n  \"resourceType\": \"Schedule\"\n});",
+      "authenticationProvider": "FHIRAR4 server auth-provider"
+    },
+    {
+      "id": "ea07d46be4a3-795e5641bde518d2-2058",
+      "type": "prompt",
+      "dataType": "scenario.availableSlots",
+      "designer": {
+        "xLocation": 700,
+        "yLocation": 960,
+        "listStyle": 3,
+        "next": "5dc09ed97398-ffed6e2f5572de0a-29bd"
+      },
+      "text": "Please select a date and time for your appointment: ",
+      "variable": "selectedSlotStartText",
+      "stringId": "stringId_ff87f72cb613eda7",
+      "choiceType": "choice",
+      "label": "Time"
+    },
+    {
+      "id": "dd09d52444f0-6127784ad52de326-2f2d",
+      "type": "action",
+      "label": "Available slots",
+      "designer": {
+        "xLocation": 580,
+        "yLocation": 831,
+        "next": "ac43e93ecc06-027530b882db2982-c6be"
+      },
+      "onInit": "scenario.availableSlots = {};\r\nscenario.availableSlotsReponse.entry.map(entry => entry.resource).forEach(resource => {\r\n    const date = new Date(resource.start);\r\n    const dateText = moment(date).format(\"dddd, MMMM Do YYYY, h:mm A\");\r\n    scenario.availableSlots[dateText] = {\r\n        slot: resource\r\n    };\r\n});"
+    },
+    {
+      "id": "5dc09ed97398-ffed6e2f5572de0a-29bd",
+      "type": "action",
+      "label": "Selected slot",
+      "designer": {
+        "xLocation": 706,
+        "yLocation": 1027,
+        "next": "c5a5f8dfacd4-99fcee3c1699f97c-f246"
+      },
+      "onInit": "scenario.selectedSlot = scenario.availableSlots[scenario.selectedSlotStartText.entity].slot"
+    },
+    {
+      "id": "98bf84566402-e951c9d55729919f-fd24",
+      "type": "branch",
+      "condition": "scenario.selectedSchedule != null && scenario.selectedSchedule.id",
+      "designer": {
+        "xLocation": 489,
+        "yLocation": 668,
+        "next": "c22da173a7d6-44dbfbda56efd0f3-6261"
+      },
+      "label": "Verification",
+      "targetStepId": "98f942e5014a-f5622096aa0f267b-d372"
+    },
+    {
+      "id": "ac43e93ecc06-027530b882db2982-c6be",
+      "type": "branch",
+      "condition": "Object.keys(scenario.availableSlots).length > 0",
+      "designer": {
+        "xLocation": 580,
+        "yLocation": 920,
+        "next": "2f9ad59f5d8d-db37c9a2f31b7797-e4b8"
+      },
+      "label": "Verification",
+      "targetStepId": "ea07d46be4a3-795e5641bde518d2-2058"
+    },
+    {
+      "id": "9ec4f8beae25-c4b4a989620942c7-e56a",
+      "type": "branch",
+      "condition": "scenario.userConsent.entity === 'Yes'",
+      "designer": {
+        "xLocation": 400,
+        "yLocation": 140,
+        "next": "7ac438cb489c-4e926184a815dc4c-bf64"
+      },
+      "targetStepId": "20737162a687-2f88f90ae4ff837e-e760",
+      "label": "Consent"
+    },
+    {
+      "id": "2637c41a599d-385f35920703b350-54c2",
+      "type": "branch",
+      "condition": "scenario.selectedPatient != null && scenario.selectedPatient.id",
+      "designer": {
+        "xLocation": 1151,
+        "yLocation": 366,
+        "next": "b08383079582-7f2f778ab8a3cd77-0197"
+      },
+      "label": "verify selectedPatient and id exist",
+      "targetStepId": "c7c896f38e68-d90500d5b382b649-876a"
+    },
+    {
+      "id": "c7c896f38e68-d90500d5b382b649-876a",
+      "type": "datasource",
+      "designer": {
+        "xLocation": 1230,
+        "yLocation": 480,
+        "next": "42b4d517c00d-b49fcb77883f6e20-d799"
+      },
+      "dataConnection": "FHIRAR4",
+      "urlPath": "Appointment",
+      "urlParams": "'_format=application/json'",
+      "method": "post",
+      "headers": "",
+      "payload": "{\n    \"resourceType\": \"Appointment\",\n    \"status\": \"booked\",\n    \"serviceType\": [{\n\t\t\"coding\": [{\n\t\t\t\"code\": scenario.selectedServiceTypeCode\n\t\t}]\n\t}],\n\t\"start\": scenario.selectedSlot.start,\n\t\"end\": scenario.selectedSlot.end,\n\t\"slot\": {\n\t\t\"reference\": \"Slot/\" + scenario.selectedSlot.id,\n\t\t\"type\": \"Slot\",\n\t\t\"display\": \"Slot for appointment\"\n\t},\n\t\"comment\": scenario.appointmentComments,\n\t\"participant\": [\n\t\t{\n\t\t\t\"actor\": {\n\t\t\t\t\"reference\": scenario.selectedSchedule.actor[0].reference,\n\t\t\t\t\"type\": \"HealthcareService\",\n\t\t\t\t\"display\": \"HealthcareService of the appointment\"\n\t\t\t},\n\t\t\t\"required\": \"required\",\n\t\t\t\"status\": \"accepted\"\n\t\t},\n\t\t{\n\t\t\t\"actor\": {\n\t\t\t\t\"reference\": \"Patient/\" + scenario.selectedPatient.id,\n\t\t\t\t\"type\": \"Patient\",\n\t\t\t\t\"display\": \"Patient of the appointment\"\n\t\t\t},\n\t\t\t\"required\": \"required\",\n\t\t\t\"status\": \"accepted\"\n\t\t}\n\t]\n}",
+      "opJson": true,
+      "opResolveWithFullResponse": false,
+      "response": "createAppointmentResponse",
+      "label": "Create Appointment for selectedPatient and HealthcareService",
+      "authenticationProvider": "FHIRAR4 server auth-provider",
+      "fhirAction": "Create",
+      "fhirResource": "Appointment"
+    },
+    {
+      "id": "b08383079582-7f2f778ab8a3cd77-0197",
+      "type": "datasource",
+      "designer": {
+        "xLocation": 1060,
+        "yLocation": 480,
+        "next": "9de911415210-30df3b9b7f657972-3b33"
+      },
+      "dataConnection": "FHIRAR4",
+      "urlPath": "Patient",
+      "urlParams": "'_format=application/json'",
+      "method": "post",
+      "headers": "",
+      "payload": "{\n    \"resourceType\": \"Patient\",\n    \"name\": {\n        \"given\": scenario.createPatientInfo.firstName,\n\t\t\"family\": scenario.createPatientInfo.lastName,\n\t\t\"text\": scenario.createPatientInfo.firstName + \" \" + scenario.createPatientInfo.lastName\n    },\n    \"birthDate\": scenario.createPatientInfo.birthDate,\n    \"gender\": scenario.createPatientInfo.gender,\n    \"telecom\": [\n    \t{\n    \t\t\"system\": \"email\",\n    \t\t\"value\": scenario.createPatientInfo.email\n    \t},\n    \t{\n    \t\t\"system\": \"phone\",\n    \t\t\"value\": scenario.createPatientInfo.mobilePhone,\n    \t\t\"use\": \"mobile\"\n    \t},\n    \t{\n\t\t\t\"system\": \"phone\",\n    \t\t\"value\": scenario.createPatientInfo.homePhone,\n    \t\t\"use\": \"home\"\n    \t}\n    ]\n}",
+      "opJson": true,
+      "opResolveWithFullResponse": false,
+      "response": "createPatientResponse",
+      "label": "Create Patient",
+      "authenticationProvider": "FHIRAR4 server auth-provider",
+      "fhirAction": "Create",
+      "fhirResource": "Patient"
+    },
+    {
+      "id": "d722f1fa8c75-81f05540e96f9ca5-daa4",
+      "type": "datasource",
+      "designer": {
+        "xLocation": 1140,
+        "yLocation": 194,
+        "next": "5ee2333c3ebf-8a4a4994b9fdc269-7489"
+      },
+      "dataConnection": "FHIRAR4",
+      "authenticationProvider": "FHIRAR4 server auth-provider",
+      "urlPath": "Patient",
+      "urlParams": "`given=${scenario.searchPatientInfo.firstName}&family=${scenario.searchPatientInfo.lastName}&gender=${scenario.searchPatientInfo.gender}&birthdate=${scenario.searchPatientInfo.birthDate}`",
+      "fhirAction": "Read",
+      "fhirResource": "Patient",
+      "method": "get",
+      "headers": "",
+      "payload": "/* fill the missing fields */\nFHIR({\n  \"resourceType\": \"Patient\"\n});",
+      "opJson": true,
+      "opResolveWithFullResponse": false,
+      "response": "searchPatientResponse",
+      "label": "Search Patient"
+    },
+    {
+      "id": "5ee2333c3ebf-8a4a4994b9fdc269-7489",
+      "type": "action",
+      "label": "Get selectedPatient from searchPatientResponse",
+      "designer": {
+        "xLocation": 1147,
+        "yLocation": 266,
+        "next": "2637c41a599d-385f35920703b350-54c2"
+      },
+      "onInit": "scenario.availablePatients = [];\r\nif(scenario.searchPatientResponse && scenario.searchPatientResponse.entry){\r\n    scenario.availablePatients = scenario.searchPatientResponse.entry.map(entry => entry.resource);\r\n}\r\nif(scenario.availablePatients.length > 0) {\r\n    // assuming there is one patient for given search criteria\r\n    scenario.selectedPatient = scenario.availablePatients[0];\r\n}"
+    },
+    {
+      "id": "9de911415210-30df3b9b7f657972-3b33",
+      "type": "action",
+      "label": "Get selectedPatient from createPatientResponse",
+      "designer": {
+        "xLocation": 1060,
+        "yLocation": 573,
+        "next": "2637c41a599d-385f35920703b350-54c2"
+      },
+      "onInit": "scenario.selectedPatient = scenario.createPatientResponse;"
+    },
+    {
+      "id": "42b4d517c00d-b49fcb77883f6e20-d799",
+      "type": "branch",
+      "condition": "scenario.createAppointmentResponse != null && scenario.createAppointmentResponse.id",
+      "designer": {
+        "xLocation": 1240,
+        "yLocation": 560,
+        "next": "35668451fb10-45a2c051f4238b6e-99c5"
+      },
+      "label": "verify selectedPatient and id exist",
+      "targetStepId": "8e67fb45ec60-56de166c2c5717b8-5021"
+    },
+    {
+      "id": "35668451fb10-45a2c051f4238b6e-99c5",
+      "type": "statement",
+      "designer": {
+        "xLocation": 1168,
+        "yLocation": 680
+      },
+      "text": "Appointment was not created. Thank you.",
+      "stringId": "stringId_2d439011ecebc222"
+    },
+    {
+      "id": "8e67fb45ec60-56de166c2c5717b8-5021",
+      "type": "statement",
+      "designer": {
+        "xLocation": 1320,
+        "yLocation": 680
+      },
+      "text": "Appoinment was sucessfully created. Thank you.",
+      "stringId": "stringId_2d439011ecebc222"
+    },
+    {
+      "id": "c22da173a7d6-44dbfbda56efd0f3-6261",
+      "type": "statement",
+      "designer": {
+        "xLocation": 380,
+        "yLocation": 760
+      },
+      "text": "I was not able to find open schedule, please try again later.",
+      "stringId": "stringId_761a6f4fd3c3d1f5"
+    },
+    {
+      "id": "f986451780c2-6382854baeabacfd-05c5",
+      "type": "action",
+      "label": "Selected schedule",
+      "designer": {
+        "xLocation": 580,
+        "yLocation": 580
+      },
+      "onInit": "scenario.availableSchedules = [];\r\nif (scenario.availableSchedulesResponse && scenario.availableSchedulesResponse.entry) {\r\n    scenario.availableSchedules = scenario.availableSchedulesResponse.entry.map(entry => entry.resource);\r\n}\r\nif (scenario.availableSchedules.length > 0) {\r\n    // assuming there is one schedule for each service type we set the first one on selectedSchedule\r\n    scenario.selectedSchedule = scenario.availableSchedules[0];\r\n}"
+    },
+    {
+      "id": "3bda2d4cee0a-0d4b3b532fcf2fc9-4c51",
+      "type": "action",
+      "label": "Selected schedule",
+      "designer": {
+        "xLocation": 480,
+        "yLocation": 570,
+        "next": "98bf84566402-e951c9d55729919f-fd24"
+      },
+      "onInit": "scenario.selectedSchedule = scenario.availableSchedulesResponse;"
+    },
+    {
+      "id": "c5a5f8dfacd4-99fcee3c1699f97c-f246",
+      "type": "prompt",
+      "dataType": "object",
+      "designer": {
+        "xLocation": 770,
+        "yLocation": 1100,
+        "next": "bef6f1b5215c-a4e38bcbd6a128f6-28ff"
+      },
+      "variable": "createPatientInfo",
+      "layout": "vertical",
+      "attachment": [
+        {
+          "type": "AdaptiveCard",
+          "cardCode": "{\r\n  \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\r\n  \"type\": \"AdaptiveCard\",\r\n  \"version\": \"1.0\",\r\n  \"body\": [\r\n    {\r\n      \"type\": \"TextBlock\",\r\n      \"text\": \"Please specify your name\"\r\n    },\r\n    {\r\n      \"type\": \"Input.Text\",\r\n      \"placeholder\": \"Name\",\r\n      \"style\": \"text\",\r\n      \"maxLength\": 0,\r\n      \"id\": \"firstName\"\r\n    },\r\n    {\r\n      \"type\": \"Input.Text\",\r\n      \"placeholder\": \"Last Name\",\r\n      \"style\": \"text\",\r\n      \"maxLength\": 0,\r\n      \"id\": \"lastName\"\r\n    },\r\n    {\r\n        \"type\": \"TextBlock\",\r\n        \"text\": \"Please select your gender\"\r\n    },\r\n    {\r\n      \"type\": \"Input.ChoiceSet\",\r\n      \"isMultiSelect\": false,\r\n      \"id\": \"gender\",\r\n      \"style\": \"expanded\",\r\n      \"value\": \"female\",\r\n      \"choices\": [\r\n        {\r\n          \"title\": \"female\",\r\n          \"value\": \"female\"\r\n        },\r\n        {\r\n          \"title\": \"male\",\r\n          \"value\": \"male\"\r\n        },\r\n        {\r\n          \"title\": \"other\",\r\n          \"value\": \"other\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"type\": \"TextBlock\",\r\n      \"text\": \"Select date of birth\"\r\n    },\r\n    {\r\n      \"type\": \"Input.Date\",\r\n      \"placeholder\": \"Date of birth\",\r\n      \"id\": \"birthDate\",\r\n      \"value\": \"1970-01-01\"\r\n    },\r\n    {\r\n        \"type\": \"TextBlock\",\r\n        \"text\": \"Mobile phone number\"\r\n    },\r\n    {\r\n        \"type\": \"Input.Text\",\r\n        \"id\": \"mobilePhone\",\r\n        \"placeholder\": \"xxx.xxx.xxxx\",\r\n        \"style\": \"tel\"\r\n    },\r\n    {\r\n        \"type\": \"TextBlock\",\r\n        \"text\": \"Home phone number\"\r\n    },\r\n    {\r\n        \"type\": \"Input.Text\",\r\n        \"id\": \"homePhone\",\r\n        \"placeholder\": \"xxx.xxx.xxxx\",\r\n        \"style\": \"tel\"\r\n    },\r\n    {\r\n        \"type\": \"TextBlock\",\r\n        \"text\": \"Your email\"\r\n    },\r\n    {\r\n        \"type\": \"Input.Text\",\r\n        \"id\": \"email\",\r\n        \"placeholder\": \"youremail@example.com\",\r\n        \"style\": \"email\"\r\n    }\r\n    ],\r\n  \"actions\": [\r\n    {\r\n      \"type\": \"Action.Submit\",\r\n      \"title\": \"Submit\"\r\n    }\r\n  ]\r\n}"
+        }
+      ],
+      "label": "Registration form"
+    },
+    {
+      "id": "bef6f1b5215c-a4e38bcbd6a128f6-28ff",
+      "type": "statement",
+      "designer": {
+        "xLocation": 812,
+        "yLocation": 540,
+        "next": "d722f1fa8c75-81f05540e96f9ca5-daa4"
+      },
+      "text": "scenario.searchPatientInfo = scenario.createPatientInfo;",
+      "stringId": "stringId_7f58ee4faa54aa10"
+    }
+  ]
+}
