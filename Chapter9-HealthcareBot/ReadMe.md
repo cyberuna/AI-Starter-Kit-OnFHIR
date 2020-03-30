@@ -39,10 +39,10 @@ Click Integration --> Data connections from the left navigation and click '+ New
 * Design and Coding: Updated Template\
 ** Schedule and Slot has to be available for the service types on your Azure API for FHIR.\
 ** This template was enhanced to work to create an appointment.\
--- Click the 'Code' tab on the bottom left.
--- Copy and paste from the [Updated Template](./UpdatedFHIRTemplate.json).
--- Edit names of 'authenticationProvider' and 'dataConnection' in the file to the ones you created in steps above.
--- Save and Exit.
+-- Click the 'Code' tab on the bottom left.\
+-- Copy and paste from the [Updated Template](./UpdatedFHIRTemplate.json).\
+-- Edit names of 'authenticationProvider' and 'dataConnection' in the file to the ones you created in steps above.\
+-- Save and Exit.\
 -- Open the file and click 'Run' at the top.
 * Design and Coding: From Template Catalog\
 ** Schedule and Slot has to be available for the service types on your Azure API for FHIR.\
@@ -55,13 +55,10 @@ Click Integration --> Data connections from the left navigation and click '+ New
 -- Change 'Path' to not have / or quotes as pre-fix or post-fix. Example: Patient and not /Patient or 'Patient'\
 -- 'Payload' will be grayed out for 'Read'. Copy the copied and saved Payload into the 'Payload' box for 'Create'. Changing the Data Connection causes the fields in Payload to disappear.\
 -- Save and Exit.\
--- Re-open and test by right-clicking on any and click 'Run from here'.\
+-- Re-open and test by right-clicking on any and click 'Run from here'.
 * Web Chat:\
 Check this to [Embed Health Bot service in Web](https://github.com/Microsoft/HealthBotcontainersample)
 
-
-
-* **Configure templates**\
 
 
 *** 
