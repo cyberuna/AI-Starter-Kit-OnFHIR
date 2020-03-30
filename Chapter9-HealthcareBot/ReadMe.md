@@ -11,25 +11,31 @@ This chapter focuses on how to use the "Booking appointments" template in Health
 * Access to create SaaS [Microsoft Healthcare Bot Service](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoft-hcb.microsofthealthcarebot).
 
 ## Steps
-* Create a [Microsoft Healthcare Bot Service](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoft-hcb.microsofthealthcarebot). Select a software plan and click Create.
-* You will receive an email from Azure Marketplace with a config link to the Health Bot Service admin portal. Once configuration is done, you will see the Health Bot Service home page.
-* Click Integration --> Authentication from the left navigation and click '+ New'.\
+* Setup:\
+Create a [Microsoft Healthcare Bot Service](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoft-hcb.microsofthealthcarebot). Select a software plan and click Create.
+* Configuration:\
+You will receive an email from Azure Marketplace with a config link to the Health Bot Service admin portal. Once configuration is done, you will see the Health Bot Service home page.
+* Authentication:\
+Click Integration --> Authentication from the left navigation and click '+ New'.\
 -- Enter Name for 'Authentication provider'. \
 -- Choose "OAuth 2.0: Server-to-server authorization" in 'Authentication method'.\
 -- Enter your Azure API for FHIR Client ID in 'Client ID'. You can find this in your Azure API for FHIR app registration.\
 -- Enter your Azure API for FHIR Client Secret in 'Client Secret'. You can find this in your Azure API for FHIR app registration.\
--- Enter "https://login.microsoftonline.com/'<tenantid>'/oauth2/v2.0/token" in 'Access Token URL'. You can find this in Authority under Authentication in your Azure API for FHIR service.\
+-- Enter 'https://login.microsoftonline.com/<tenantid>/oauth2/v2.0/token' in 'Access Token URL'. You can find this in Authority under Authentication in your Azure API for FHIR service.\
 -- Check if your Object ID has been added to 'Allowed Object IDs' in your Azure API for FHIR service.\
 -- Enter "https://'<myfhir>'.azurehealthcareapis.com/.default" in 'Scope'.\
 -- Click 'Update'.
-* Click Integration --> Data connections from the left navigation and click '+ New'.\
+* Data Connection:\
+Click Integration --> Data connections from the left navigation and click '+ New'.\
 -- Enter Name for 'Data connection'.\
 -- Turn on 'FHIR Support'.\
--- Enter "https://'<myfhir>'.azurehealthcareapis.com" for 'Base URL'. You can find this in Audience under Authentication in your Azure API for FHIR service.\
+-- Enter 'https://<myfhir'.azurehealthcareapis.com for 'Base URL'. You can find this in Audience under Authentication in your Azure API for FHIR service.\
 -- Choose the Authentication Provider create above in 'Authentication provider'.\
 -- Click 'Update'.
-* Expand 'Scenarios' in the left navgation and click 'Template catalog'. Click 'Booking appointments' and click 'Import template'.
-The visual designer will open with the template. The imported template will appear under 'Scenarios' --> 'Manage'. Clicking on the name of the template will also open the template in visual designer.
+* Template Catalog:\
+-- Expand 'Scenarios' in the left navgation and click 'Template catalog'.\
+-- Click 'Booking appointments' and click 'Import template'.\
+-- The visual designer will open with the template. The imported template will appear under 'Scenarios' --> 'Manage'. Clicking on the name of the template will also open the template in visual designer.
 * Design and Coding: [Updated Template](./UpdatedFHIRTemplate.json)\
 Schedule and Slot has to be available for the service type chosen on your Azure API for FHIR.
 This template was enhanced to work as-is to create an appointment.
@@ -50,7 +56,8 @@ This template needs some design and coding changes before using as-is to create 
 -- 'Payload' will be grayed out for 'Read'. Copy the saved Payload into the 'Payload' box for 'Create'. Changing the Data Connection causes the fields in Payload to disappear.\
 -- Test by right-clicking on any and click 'Run from here'.\
 -- To create an appointment, a Patient with a Schedule for a chosen Service Type and Slot have to be present in your Azure API for FHIR.
-* Check this to [Embed Health Bot service in Web](https://github.com/Microsoft/HealthBotcontainersample)
+* Web Chat:\
+Check this to [Embed Health Bot service in Web](https://github.com/Microsoft/HealthBotcontainersample)
 
 
 
