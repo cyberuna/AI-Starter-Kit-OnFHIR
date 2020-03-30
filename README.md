@@ -9,7 +9,7 @@ The high level solution architecture includes:
 #### * Store Data: Store FHIR data in Azure API for FHIR service.
 #### * Prepare and Analyze Data: Prepare data using Azure Data Factory and Azure Databricks. Store in Azure SQL DB. Analyze using PowerBI.
 #### * IoMT Connector: Ingest data from IoMT (internet of medical things) devices and persist the data in a FHIR® server.
-#### * Appointment Scheduler: Allow users to schedule an appointment using FHIR.
+#### * Appointment Scheduler: Allow users to schedule an appointment using Healthcare Bot and FHIR.
 
 <center><img src="images//azure-api-fhir-paas.png" width="850"></center>
 
