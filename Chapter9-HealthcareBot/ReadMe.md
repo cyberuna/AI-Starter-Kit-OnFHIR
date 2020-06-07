@@ -55,26 +55,28 @@ Click Integration --> Data connections from the left navigation and click '+ New
 -- Choose the Data Connection created above.\
 -- Check if the right Base URL appears in 'Base URL'.\
 -- Change 'Path' to not have / or quotes as pre-fix or post-fix. Example: Patient and not /Patient or 'Patient'\
--- 'Payload' will be grayed out for 'Read'. Copy the copied and saved Payload into the 'Payload' box for 'Create'. Changing the Data Connection causes the fields in Payload to disappear.\
+-- 'Payload' will be grayed out for 'Read'. Paste the copied into the 'Payload' box for 'Create'. Click Ok. Changing the Data Connection causes the fields in Payload to disappear.\
 -- Save and Exit.\
--- Re-open and test by right-clicking on any and click 'Run from here'.
+-- Re-open and test by right-clicking on any and click 'Run from here'.\
+-- Use Postman or other tools to test if the resources has been saved into Azure API for FHIR.
 
 ### Back to Work Template
 * Template Catalog:\
 -- Expand 'Scenarios' in the left navgation and click 'Template catalog'.\
 -- Click 'Back to Work' and click 'Import template'.\
--- There will be 2 templates created: 'COVID19 Back To Work Core' and 'COVID19 Back To Work CRUD' and will appear under 'Scenarios' --> 'Manage'. Clicking on the name of the template will open the template in visual designer.
+-- There will be 2 templates created: 'COVID19 Back To Work Core' and 'COVID19 Back To Work CRUD' and will appear under 'Scenarios' --> 'Manage'. CRUD template is called from Core. Clicking on the name of the template will open the template in visual designer.
 * Design and Coding: Update Template\
+-- Open the 'COVID19 Back To Work CRUD' template.\
 ** This template has building blocks but needs design and coding changes before ready to be run.\
 ** The following changes needs to done for every Data Connection in the template.\
--- Open the 'COVID19 Back To Work CRUD' template.\
 -- Double-click or right-click --> Edit on every Data Connection that is in oval shape.\
 -- Copy the 'Payload' and save somewhere as you will need it.\
 -- Choose the Data Connection created above.\
 -- Check if the right Base URL appears in 'Base URL'.\
--- 'Payload' will be grayed out for 'Read'. Copy the copied and saved Payload into the 'Payload' box for 'Create'. Changing the Data Connection causes the fields in Payload to disappear.\
+-- 'Payload' will be grayed out for 'Read'. Paste the copied Payload into the 'Payload' box for 'Create'. Click Ok. Changing the Data Connection causes the fields in Payload to disappear.\
 -- Save and Exit.\
--- Re-open and test by right-clicking on any and click 'Run from here'.
+-- Open 'COVID19 Back To Work Core' template and click 'Run'.\
+-- Use Postman or other tools to test if the resources has been saved into Azure API for FHIR.
 
 * Web Chat:\
 Check this to [Embed Health Bot service in Web](https://github.com/Microsoft/HealthBotcontainersample)
