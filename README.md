@@ -9,7 +9,8 @@ The high level solution architecture includes:
 #### * Store Data: Store FHIR data in Azure API for FHIR service.
 #### * Prepare and Analyze Data: Prepare data using Azure Data Factory and Azure Databricks. Store in Azure SQL DB. Analyze using PowerBI.
 #### * IoMT Connector: Ingest data from IoMT (internet of medical things) devices and persist the data in a FHIR® server.
-#### * Appointment Scheduler: Allow users to schedule an appointment using Healthcare Bot and FHIR.
+#### * Appointment Scheduler: Allow users to schedule an appointment using Healthcare Bot and FHIR. Back to Work: COVID-19 symptom screening to check if it is safe for your employees to return to work.
+#### * Export Data: Export FHIR data using Logic Apps into Blob Storage.
 
 <center><img src="images//azure-api-fhir-paas.png" width="850"></center>
 
@@ -26,7 +27,8 @@ Azure Subscription is required to complete this starter kit. Azure Subscription 
 * [Chapter 6 - PowerBI: Analyze the FHIR bundles](./Chapter6-PowerBI/ReadMe.md)
 * [Chapter 7 - Open Source FHIR Server: Create and Configure](./Chapter7-OpenSourceFHIRServer/ReadMe.md)
 * [Chapter 8 - IoMT FHIR Connector: Ingest and Persist](./Chapter8-IoMTFHIRConnector/ReadMe.md)
-* [Chapter 9 - Healthcare Bot: Appointment Scheduler](./Chapter9-HealthcareBot/ReadMe.md)
+* [Chapter 9 - Healthcare Bot: Booking appointments and Back to Work](./Chapter9-HealthcareBot/ReadMe.md)
+* [Chapter 10 - Export FHIR Data: Export FHIR data to Blob Storage](./Chapter10-ExportFHIR/ReadMe.md)
 
 # Contributing
 
