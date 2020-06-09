@@ -2,8 +2,7 @@
 
 #### This chapter is sub-version of [FHIRExportQuickstart](https://github.com/microsoft/health-architectures/tree/master/FHIR/FHIRExportQuickstart) focusing on exporting data out of Azure API for FHIR. Click on the link for more details.
 
-
-This chapter focuses on how to use the "Booking appointments" and "Back to Work" template in HealthBot Service and allow users to schedule an appointment with a healthcare provider using FHIR easily and securely.
+This chapter focuses on how to use Logic App to export FHIR data into Blob Storage as ndjson files.
 
 ## Prerequisites
 * [Azure API for FHIR R4 server](../Chapter2-AzureAPIforFHIR/ReadMe.md).
@@ -14,26 +13,25 @@ This chapter focuses on how to use the "Booking appointments" and "Back to Work"
 ## Steps
 * Setup:\
 -- Copy [arm_template](./arm_template.json) and [arm_template_parameters](arm_template_parameters.json) to a folder.\
--- Open arm_template_parameters and update value for apiforfhir, tenantID, clientID, clientSecret.\
+-- Open arm_template_parameters and update values for apiforfhir, tenantID, clientID, clientSecret.\
 -- Open arm_template and update value for logicappname if you like to change the default name "fhirexport".\
--- Run the below using PowerShell to create Logic App that will export FHIR data into Blob Storage.\
-
+-- Run the below using PowerShell to create Logic App that will export FHIR data into Blob Storage.
 ```
--- Connect to Azure: Connect-AzAccount
--- Get the subscription ID: Get-AzSubscription
--- Select the subscription, replace with your subscrption ID: Select-AzSubscription -SubscriptionId "<subscriptionID>"
--- Create Logic App using ARM template, replace with your resource group: New-AzResourceGroupDeployment -ResourceGroupName "<resourcegroup>" -TemplateFile "./arm_template.json" -TemplateParameterFile "./arm_template_parameters.json"
+   Connect to Azure: Connect-AzAccount
+   Get the subscription ID: Get-AzSubscription
+   Select the subscription, replace with your subscrption ID: Select-AzSubscription -SubscriptionId "<subscriptionID>"
+   Create Logic App using ARM template, replace with your resource group: New-AzResourceGroupDeployment -ResourceGroupName "<resourcegroup>" -TemplateFile "./arm_template.json" -TemplateParameterFile "./arm_template_parameters.json"
 ```
 * Validation & Run:\
 -- Open Azure Portal and check if the logic app is created.\
--- Manually trigger from Portal or use command below.\
+-- Manually trigger from Portal or use command below.
 ```
 Start-AzLogicApp 
      -ResourceGroupName <Name of resource group from above> 
      -Name <Name of logic app from above>
      -TriggerName "Recurrence"
 ```
--- Check the Blob Storage container which was configured in pre-requistes for ndjson files exported from FHIR server.\
+-- Check the Blob Storage container which was configured in pre-requistes for ndjson files exported from FHIR server.
 
 
 *** 
