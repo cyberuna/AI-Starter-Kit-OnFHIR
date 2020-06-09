@@ -1,4 +1,4 @@
-# Chapter 10 - Export Data: Export FHIR data to Blob Storage
+# Chapter 3.1 - Export Data: Export FHIR data to Blob Storage
 
 #### This chapter is sub-version of [FHIRExportQuickstart](https://github.com/microsoft/health-architectures/tree/master/FHIR/FHIRExportQuickstart) focusing on exporting data out of Azure API for FHIR. Click on the link for more details.
 

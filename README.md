@@ -7,10 +7,10 @@ The high level solution architecture includes:
 #### * Generate Data: Generate FHIR data using Synthea.
 #### * Ingest Data: Upload the generated data into Azure Blob Storage. Ingest into Azure API for FHIR using an Azure Function.
 #### * Store Data: Store FHIR data in Azure API for FHIR service.
+#### * Export Data: Export FHIR data using Logic Apps into Blob Storage.
 #### * Prepare and Analyze Data: Prepare data using Azure Data Factory and Azure Databricks. Store in Azure SQL DB. Analyze using PowerBI.
 #### * IoMT Connector: Ingest data from IoMT (internet of medical things) devices and persist the data in a FHIR® server.
 #### * Appointment Scheduler: Allow users to schedule an appointment using Healthcare Bot and FHIR. Back to Work: COVID-19 symptom screening to check if it is safe for your employees to return to work.
-#### * Export Data: Export FHIR data using Logic Apps into Blob Storage.
 
 <center><img src="images//azure-api-fhir-paas.png" width="850"></center>
 
@@ -22,13 +22,13 @@ Azure Subscription is required to complete this starter kit. Azure Subscription 
 * [Chapter 1 - Synthea: Generate FHIR patient and financial bundles](./Chapter1-Synthea/ReadMe.md)
 * [Chapter 2 - Azure API for FHIR: Create and configure](./Chapter2-AzureAPIforFHIR/ReadMe.md)
 * [Chapter 3 - Azure Blob Storage and Azure Function: Bulk Ingest data into Azure API for FHIR](./Chapter3-AzureBlobStorageandAzureFunction/ReadMe.md)
+* [Chapter 3.1 - Export FHIR Data: Export FHIR data to Blob Storage](./Chapter3.1-ExportData/ReadMe.md)
 * [Chapter 4 - Azure Data Factory: Convert bundles to delimited json (ndjson)](./Chapter4-AzureDataFactory/ReadMe.md)
 * [Chapter 5 - Azure Databricks: Parse json and load into Azure SQL DB](./Chapter5-AzureDatabricks/ReadMe.md)
 * [Chapter 6 - PowerBI: Analyze the FHIR bundles](./Chapter6-PowerBI/ReadMe.md)
 * [Chapter 7 - Open Source FHIR Server: Create and Configure](./Chapter7-OpenSourceFHIRServer/ReadMe.md)
 * [Chapter 8 - IoMT FHIR Connector: Ingest and Persist](./Chapter8-IoMTFHIRConnector/ReadMe.md)
 * [Chapter 9 - Healthcare Bot: Booking appointments and Back to Work](./Chapter9-HealthcareBot/ReadMe.md)
-* [Chapter 10 - Export FHIR Data: Export FHIR data to Blob Storage](./Chapter10-ExportData/ReadMe.md)
 
 # Contributing
 
