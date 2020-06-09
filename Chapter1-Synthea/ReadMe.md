@@ -33,10 +33,11 @@ By default, Synthea contains publicly available demographic data obtained from t
 
 
 Detailed Example: 
+To generate data for 100 patients using a seed (unique root of data generation) of 777 in Texas using the associated synthea properties settings:
+-- Copy [run_synthea](./run_synthea.bat) file to the same location as the .jar file downloaded above.\
+-- Edit the file with your folder locations.\
+-- Run the bat file to generate json files to the output folder in the same directory.
 
--> Generate data for 100 patients using a seed (unique root of data generation) of 777 in Texas using the associated synthea properties settings
-
-.\run_synthea -s 777 -p 100 Texas -c [/synthea.properties](./synthea.properties)
 
 ***
 
