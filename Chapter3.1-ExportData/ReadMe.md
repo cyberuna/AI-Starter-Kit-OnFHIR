@@ -33,7 +33,7 @@ Start-AzLogicApp
 ```
 -- Check the Blob Storage container which was configured in pre-requistes for ndjson files exported from FHIR server.\
 -- You can also use GET in Postman using "https://<myfhir>.azurehealthcareapis.com/$export".\
--- Individual resources like "https://<myfhir>.azurehealthcareapis.com/Patient/$export" is not supported yet.
+-- Exporting individual resources like "https://<myfhir>.azurehealthcareapis.com/Patient/$export" is not supported yet.
 
 
 *** 
