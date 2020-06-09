@@ -28,7 +28,7 @@ Azure Subscription is required to complete this starter kit. Azure Subscription 
 * [Chapter 7 - Open Source FHIR Server: Create and Configure](./Chapter7-OpenSourceFHIRServer/ReadMe.md)
 * [Chapter 8 - IoMT FHIR Connector: Ingest and Persist](./Chapter8-IoMTFHIRConnector/ReadMe.md)
 * [Chapter 9 - Healthcare Bot: Booking appointments and Back to Work](./Chapter9-HealthcareBot/ReadMe.md)
-* [Chapter 10 - Export FHIR Data: Export FHIR data to Blob Storage](./Chapter10-ExportFHIR/ReadMe.md)
+* [Chapter 10 - Export FHIR Data: Export FHIR data to Blob Storage](./Chapter10-ExportData/ReadMe.md)
 
 # Contributing
 
