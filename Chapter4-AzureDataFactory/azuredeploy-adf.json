@@ -2,240 +2,98 @@
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "adfName": {
+        "factoryName": {
+            "type": "string",
+            "metadata": "Data Factory name",
+            "defaultValue": "fhiradf"
+        },
+        "FhirRestService_properties_typeProperties_url": {
+            "type": "string",
+            "defaultValue": "https://<myfhir>.azurehealthcareapis.com"
+        },
+        "FhirRestService_properties_typeProperties_servicePrincipalId": {
             "type": "string",
             "defaultValue": "",
-            "metadata": {
-                "description": "Name of data factory service. If empty, name will be generated."
-            }
+	    "metadata": "ClientID of 'FhirRestService'"
         },
-        "fhirServerUrl": {
+        "FhirRestService_servicePrincipalKey": {
             "type": "string",
-            "metadata": {
-                "description": "FHIR server URL"
-            }
+            "metadata": "ClientSecret of 'FhirRestService'"
         },
-        "aadAuthority": {
+        "FhirRestService_properties_typeProperties_tenant": {
             "type": "string",
-            "defaultValue": "https://login.microsoftonline.com/common",
-            "metadata": {
-                "description": "OAuth Authority for FHIR server"
-            }
+            "defaultValue": ""
         },
-        "aadClientId": {
+        "FhirRestService_properties_typeProperties_aadResourceId": {
             "type": "string",
-            "defaultValue": "",
-            "metadata": {
-                "description": "AAD client application id for accessing FHIR server"
-            }
+            "defaultValue": "https://<myfhir>.azurehealthcareapis.com"
         },
-        "aadClientSecret": {
-            "type": "secureString",
-            "defaultValue": "",
-            "metadata": {
-                "description": "AAD client secret"
-            }
-        },
-        "aadAudience": {
+        "FhirExportAzureBlobPatient_properties_typeProperties_fileName": {
             "type": "string",
-            "defaultValue": "",
-            "metadata": {
-                "description": "Audience (resource) of the FHIR API app registration"
-            }
+            "defaultValue": "Patient.json"
         },
-        "storageAccountType": {
+        "FhirExportAzureBlobPatient_properties_typeProperties_folderPath": {
             "type": "string",
-            "defaultValue": "Standard_LRS",
-            "allowedValues": [
-                "Standard_LRS",
-                "Standard_GRS",
-                "Standard_ZRS"
-            ],
-            "metadata": {
-                "description": "Storage Account type"
-            }
+            "defaultValue": "dataexport"
         },
-        "resourceTypes": {
-            "type": "array",
-            "defaultValue": [
-                "Patient",
-                "Observation",
-                "Encounter",
-                "Practitioner",
-                "MedicationRequest"
-            ],
-            "metadata": {
-                "description": "List of Resources to export"
-            }
-        },
-        "solutionType": {
+        "FhirStageAzureBlobPatient_properties_typeProperties_fileName": {
             "type": "string",
-            "defaultValue": "FhirServerSamples",
-            "metadata": {
-                "description": "The type of the solution"
-            }
+            "defaultValue": "Patient.json"
+        },
+        "FhirStageAzureBlobPatient_properties_typeProperties_folderPath": {
+            "type": "string",
+            "defaultValue": "datastaging"
+        },
+        "AzureBlobStorage_connectionString": {
+            "type": "string",
+            "metadata": "ConnectionString of 'AzureBlobStorage'"
         }
-
     },
     "variables": {
-        "adfName": "[if(empty(parameters('adfName')), concat('fhiradf', uniqueString(resourceGroup().id)), parameters('adfName'))]",
-        "factoryId": "[concat('Microsoft.DataFactory/factories/', variables('adfName'))]",
-        "storageAccountName": "[replace(concat(toLower(variables('adfName')), 'sa'),'-','')]",
-        "restServiceLinkName": "FhirRestService",
-        "blobStorageLinkName": "AzureBlobStorage1",
-        "fhirExportPipeLineNamePrefix": "FHIRExport",
-        "fhirExportBlobFolderName": "fhirexport",
-        "aadTenant": "[last(split(parameters('aadAuthority'),'/'))]",
-        "aadAudience": "[if(empty(parameters('aadAudience')),parameters('fhirServerUrl'),parameters('aadAudience'))]",
-        "blobStageContainer": "datastaging",
-        "blobExportContainer": "dataexport"
+        "factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
     },
     "resources": [
         {
-            "type": "Microsoft.Storage/storageAccounts",
-            "name": "[variables('storageAccountName')]",
-            "tags": {
-                "FhirServerSolution": "[parameters('solutionType')]"
-            },
-            "apiVersion": "2017-10-01",
-            "location": "[resourceGroup().location]",
-            "sku": {
-                "name": "[parameters('storageAccountType')]"
-            },
-            "kind": "Storage",
-            "properties": {}
-        },
-        {
-            "name": "[variables('adfName')]",
-            "type": "Microsoft.DataFactory/factories",
-            "apiVersion": "2018-06-01",
-            "tags": {
-                "FhirServerSolution": "[parameters('solutionType')]"
-            },
-            "location": "[resourceGroup().location]",
-            "identity": {
-              "type": "SystemAssigned"
-            },
-            "properties": {
-            },
-            "resources": []
-        },
-        {
-            "name": "[concat(variables('adfName'), '/', variables('restServiceLinkName'))]",
+            "name": "[concat(parameters('factoryName'), '/FhirRestService')]",
             "type": "Microsoft.DataFactory/factories/linkedServices",
             "apiVersion": "2018-06-01",
             "properties": {
                 "annotations": [],
                 "type": "RestService",
                 "typeProperties": {
-                    "url": "[parameters('fhirServerUrl')]",
+                    "url": "[parameters('FhirRestService_properties_typeProperties_url')]",
                     "enableServerCertificateValidation": true,
                     "authenticationType": "AadServicePrincipal",
-                    "servicePrincipalId": "[parameters('aadClientId')]",
+                    "servicePrincipalId": "[parameters('FhirRestService_properties_typeProperties_servicePrincipalId')]",
                     "servicePrincipalKey": {
                         "type": "SecureString",
-                        "value": "[parameters('aadClientSecret')]"
+                        "value": "[parameters('FhirRestService_servicePrincipalKey')]"
                     },
-                    "tenant": "[variables('aadTenant')]",
-                    "aadResourceId": "[variables('aadAudience')]"
+                    "tenant": "[parameters('FhirRestService_properties_typeProperties_tenant')]",
+                    "aadResourceId": "[parameters('FhirRestService_properties_typeProperties_aadResourceId')]"
                 }
-            },
-            "dependsOn": [
-                "[resourceId('Microsoft.DataFactory/factories', variables('adfName'))]",
-            ]
+            }
         },
         {
-            "name": "[concat(variables('adfName'), '/', variables('blobStorageLinkName'))]",
+            "name": "[concat(parameters('factoryName'), '/AzureBlobStorage')]",
             "type": "Microsoft.DataFactory/factories/linkedServices",
             "apiVersion": "2018-06-01",
             "properties": {
                 "annotations": [],
                 "type": "AzureBlobStorage",
                 "typeProperties": {
-                    "connectionString": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('storageAccountName'),';AccountKey=',concat(listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')),'2015-05-01-preview').key1))]"
+                    "connectionString": "[parameters('AzureBlobStorage_connectionString')]"
                 }
             },
-            "dependsOn": [
-                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]",
-                "[resourceId('Microsoft.DataFactory/factories', variables('adfName'))]"
-            ]
+            "dependsOn": []
         },
         {
-            "name": "[concat(variables('adfName'), '/Rest', parameters('resourceTypes')[copyIndex()])]",
+            "name": "[concat(parameters('factoryName'), '/FhirExportAzureBlobPatient')]",
             "type": "Microsoft.DataFactory/factories/datasets",
-            "apiVersion": "2018-06-01",
-            "copy": {
-                "count": "[length(parameters('resourceTypes'))]",
-                "name": "fhir-rest-data-loop"
-            },
-            "properties": {
-                "linkedServiceName": {
-                    "referenceName": "[variables('restServiceLinkName')]",
-                    "type": "LinkedServiceReference"
-                },
-                "annotations": [],
-                "type": "RestResource",
-                "typeProperties": {
-                    "relativeUrl": "[concat('/', parameters('resourceTypes')[copyIndex()])]",
-                    "requestMethod": "GET",
-                    "paginationRules": {
-                        "AbsoluteUrl": "$.['link'][?(@.relation == 'next')]['url']"
-                    }
-                }
-            },
-            "dependsOn": [
-                "[concat(variables('factoryId'), '/linkedServices/', variables('restServiceLinkName'))]"
-            ]
-        },
-        {
-            "name": "[concat(variables('adfName'), '/StageAzureBlob', parameters('resourceTypes')[copyIndex()])]",
-            "type": "Microsoft.DataFactory/factories/datasets",
-            "copy": {
-                "count": "[length(parameters('resourceTypes'))]",
-                "name": "blob-stage-data-loop"
-            },
             "apiVersion": "2018-06-01",
             "properties": {
                 "linkedServiceName": {
-                    "referenceName": "[variables('blobStorageLinkName')]",
-                    "type": "LinkedServiceReference"
-                },
-                "annotations": [],
-                "type": "AzureBlob",
-                "structure": [
-                    {
-                        "name": "resource",
-                        "type": "String"
-                    }
-                ],
-                "typeProperties": {
-                    "format": {
-                        "type": "JsonFormat",
-                        "filePattern": "setOfObjects",
-                        "jsonNodeReference": "$.['entry']",
-                        "jsonPathDefinition": {
-                            "resource": "[concat('[', '''resource'']')]"
-                        }
-                    },
-                    "fileName": "[concat(parameters('resourceTypes')[copyIndex()], '.json')]",
-                    "folderPath": "[variables('blobStageContainer')]"
-                }
-            },
-            "dependsOn": [
-                "[concat(variables('factoryId'), '/linkedServices/', variables('blobStorageLinkName'))]"
-            ]
-        },
-        {
-            "name": "[concat(variables('adfName'), '/ExportAzureBlob', parameters('resourceTypes')[copyIndex()])]",
-            "type": "Microsoft.DataFactory/factories/datasets",
-            "copy": {
-                "count": "[length(parameters('resourceTypes'))]",
-                "name": "blob-export-data-loop"
-            },
-            "apiVersion": "2018-06-01",
-            "properties": {
-                "linkedServiceName": {
-                    "referenceName": "[variables('blobStorageLinkName')]",
+                    "referenceName": "AzureBlobStorage",
                     "type": "LinkedServiceReference"
                 },
                 "annotations": [],
@@ -258,22 +116,75 @@
                         "skipLineCount": 0,
                         "firstRowAsHeader": false
                     },
-                    "fileName": "[concat(parameters('resourceTypes')[copyIndex()], '.json')]",
-                    "folderPath": "[variables('blobExportContainer')]"
+                    "fileName": "[parameters('FhirExportAzureBlobPatient_properties_typeProperties_fileName')]",
+                    "folderPath": "[parameters('FhirExportAzureBlobPatient_properties_typeProperties_folderPath')]"
                 }
             },
             "dependsOn": [
-                "[concat(variables('factoryId'), '/linkedServices/', variables('blobStorageLinkName'))]"
+                "[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage')]"
             ]
         },
         {
-            "name": "[concat(variables('adfName'), '/Export', parameters('resourceTypes')[copyIndex()])]",
+            "name": "[concat(parameters('factoryName'), '/FhirRestPatient')]",
+            "type": "Microsoft.DataFactory/factories/datasets",
+            "apiVersion": "2018-06-01",
+            "properties": {
+                "linkedServiceName": {
+                    "referenceName": "FhirRestService",
+                    "type": "LinkedServiceReference"
+                },
+                "annotations": [],
+                "type": "RestResource",
+                "typeProperties": {
+                    "relativeUrl": "/Patient",
+                    "requestMethod": "GET",
+                    "paginationRules": {
+                        "AbsoluteUrl": "$.['link'][?(@.relation == 'next')]['url']"
+                    }
+                }
+            },
+            "dependsOn": [
+                "[concat(variables('factoryId'), '/linkedServices/FhirRestService')]"
+            ]
+        },
+        {
+            "name": "[concat(parameters('factoryName'), '/FhirStageAzureBlobPatient')]",
+            "type": "Microsoft.DataFactory/factories/datasets",
+            "apiVersion": "2018-06-01",
+            "properties": {
+                "linkedServiceName": {
+                    "referenceName": "AzureBlobStorage",
+                    "type": "LinkedServiceReference"
+                },
+                "annotations": [],
+                "type": "AzureBlob",
+                "structure": [
+                    {
+                        "name": "resource",
+                        "type": "String"
+                    }
+                ],
+                "typeProperties": {
+                    "format": {
+                        "type": "JsonFormat",
+                        "filePattern": "setOfObjects",
+                        "jsonNodeReference": "$.['entry']",
+                        "jsonPathDefinition": {
+                            "resource": "[['resource']"
+                        }
+                    },
+                    "fileName": "[parameters('FhirStageAzureBlobPatient_properties_typeProperties_fileName')]",
+                    "folderPath": "[parameters('FhirStageAzureBlobPatient_properties_typeProperties_folderPath')]"
+                }
+            },
+            "dependsOn": [
+                "[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage')]"
+            ]
+        },
+        {
+            "name": "[concat(parameters('factoryName'), '/FhirExportPatient')]",
             "type": "Microsoft.DataFactory/factories/pipelines",
             "apiVersion": "2018-06-01",
-            "copy": {
-                "count": "[length(parameters('resourceTypes'))]",
-                "name": "pipeline-loop"
-            },
             "properties": {
                 "activities": [
                     {
@@ -308,14 +219,14 @@
                         },
                         "inputs": [
                             {
-                                "referenceName": "[concat('Rest', parameters('resourceTypes')[copyIndex()])]",
+                                "referenceName": "FhirRestPatient",
                                 "type": "DatasetReference",
                                 "parameters": {}
                             }
                         ],
                         "outputs": [
                             {
-                                "referenceName": "[concat('StageAzureBlob', parameters('resourceTypes')[copyIndex()])]",
+                                "referenceName": "FhirStageAzureBlobPatient",
                                 "type": "DatasetReference",
                                 "parameters": {}
                             }
@@ -358,14 +269,14 @@
                         },
                         "inputs": [
                             {
-                                "referenceName": "[concat('StageAzureBlob', parameters('resourceTypes')[copyIndex()])]",
+                                "referenceName": "FhirStageAzureBlobPatient",
                                 "type": "DatasetReference",
                                 "parameters": {}
                             }
                         ],
                         "outputs": [
                             {
-                                "referenceName": "[concat('ExportAzureBlob', parameters('resourceTypes')[copyIndex()])]",
+                                "referenceName": "FhirExportAzureBlobPatient",
                                 "type": "DatasetReference",
                                 "parameters": {}
                             }
@@ -375,11 +286,10 @@
                 "annotations": []
             },
             "dependsOn": [
-                "fhir-rest-data-loop",
-                "blob-stage-data-loop",
-                "blob-export-data-loop"
+                "[concat(variables('factoryId'), '/datasets/FhirRestPatient')]",
+                "[concat(variables('factoryId'), '/datasets/FhirStageAzureBlobPatient')]",
+                "[concat(variables('factoryId'), '/datasets/FhirExportAzureBlobPatient')]"
             ]
         }
-      
     ]
 }
