@@ -14,7 +14,7 @@ This Data Factory is used to export resource types to [ndjson](http://ndjson.org
 -- Create a [Azure Blob Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal) with 2 containers `datastaging` and `dataexport`.\
 -- Download the [template](./azuredeploy-adf.json).\
 -- Go to Azure Portal and search for "Deploy a custom template". Click "Build your own template in the editor" and Load the template from the above step. Click Save.
-<center><img src="../images/adf-deploytemplate.PNG" width="500"></center>
+<center><img src="../images/adf-deploytemplate.png" width="500"></center>
 -- Enter the details for parameters and Click Create.
 
 ```
@@ -34,9 +34,10 @@ This Data Factory is used to export resource types to [ndjson](http://ndjson.org
 * Validation & Run:\
 -- Open the Azure Data Factory just created, and Click Author and Monitor.\
 -- 2 Linked Services, 3 Datasets and 1 Pipeline will be created.
-<center><img src="../images/adf-linkedservices.PNG" width="300"></center>
-<center><img src="../images/adf-datasets.PNG" width="300"></center>
-<center><img src="../images/adf-pipeline.PNG" width="300"></center>
+<center><img src="../images/adf-linkedservices.png" width="300"></center>
+<center><img src="../images/adf-datasets.png" width="300"></center>
+<center><img src="../images/adf-pipeline.png" width="300"></center>
+
 -- Click Debug or trigger to run the Pipeline.\ 
 -- Patient.json file will be created in `datastaging` and `dataexport` containers.\
 -- Create Datasets and Pipelines as needed for other FHIR resources.\
