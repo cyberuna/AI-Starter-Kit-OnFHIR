@@ -6,26 +6,36 @@
 * Knowledge of [Azure Data Factory](https://docs.microsoft.com/en-us/azure/data-factory/introduction)
 
 Azure Data Factory is a cloud data integration service that orchestrates and automates movement and transformation of data.
+This Data Factory is used to export resource types to [ndjson](http://ndjson.org/) files. 
 
-This Data Factory is used to export resource types to [ndjson](http://ndjson.org/) files. Download the [template](./azuredeploy-adf.json) and deploy an Azure Data Factory instance using custom template deployment. The template has an array parameter called `resourceTypes`, which can be set to the resource types for which the export pipelines should be deployed.
-
-The template will create:
-* Blob Storage account with `datastaging` and `dataexport` containers.
-* Linked Services to Blob Storage account, REST (Azure API for FHIR) and Databricks.
-
-<center><img src="../images/adf-connections.PNG" width="600"></center>
-
-* Datasets for each resource type for `datastaging`, `dataexport` containers and REST (Azure API for FHIR)
-* A pipeline for each of the resource types specified. The following screenshot shows an example of the Patient pipeline.
-
-<center><img src="../images/adf-export.PNG" width="500"></center>
-
-* Create a master pipeline to combine all the pipelines by adding Execute Pipelines. This shows and example of 10 resource types.
-
-<center><img src="../images/adf-exportall.PNG" width="850"></center>
-
-
-Publish All and run the master pipeline to export ndjson files for all specified resource types to blob storage `dataexport`. 
+## Steps
+* Setup:\
+-- Creata a [Azure Data Factory resource](https://docs.microsoft.com/en-us/azure/data-factory/quickstart-create-data-factory-portal) in Azure.\
+-- Create a [Azure Blob Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal) with 2 containers `datastaging` and `dataexport`.\
+-- Download the [template](./azuredeploy-adf.json).\
+-- Go to Azure Portal and search for "Deploy a custom template". Click "Build your own template in the editor" and Load the template from the above step. Click Save.\
+<center><img src="../images/adf-deploytemplate.PNG" width="500"></center>
+-- Enter the details for parameters and Click Create.\
+```
+   Choose the Subscription
+   Choose or Create new Resource group
+   Choose a Region
+   Enter the name of the Azure Data Factory
+   Enter the Azure API for FHIR URL
+   Enter the Azure API for FHIR Client ID
+   Enter the Azure API for FHIR Client Secret
+   Enter the Azure tenant ID
+   Enter the Azure API for FHIR URL
+   Change the next 4 parameters if needed
+   Enter the Azure Blob Storage connection string
+```
+* Validation & Run:\
+-- Open the Azure Data Factory just created, and Click Author and Monitor.\
+-- 2 Linked Services, 3 Datasets and 1 Pipeline will be created.
+<center><img src="../images/adf-linkedservices.PNG" width="200"></center> <center><img src="../images/adf-datasets.PNG" width="200"></center> <center><img src="../images/adf-pipeline.PNG" width="200"></center>
+-- Click Debug or trigger to run the Pipeline.\ 
+-- Patient.json file will be created in `datastaging` and `dataexport` containers.\
+-- Create Datasets and Pipelines as needed for other FHIR resources.\
 
 ***
 
