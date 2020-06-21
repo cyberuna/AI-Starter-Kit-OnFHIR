@@ -1,6 +1,6 @@
 # OnFHIR - Starter Kit for Azure API for FHIR 
 
-#### This respository contains example code and scenarios demonstrating capabilities of the [Azure API for FHIR](https://docs.microsoft.com/azure/healthcare-apis) PaaS server to populate and consume patient and financial data. 
+#### This respository contains example code and reference architecture(s) demonstrating capabilities of the [Azure API for FHIR](https://docs.microsoft.com/azure/healthcare-apis) PaaS server to populate and consume patient and financial data. 
 Some of the sample code used here is from the [FHIR Server Samples](https://github.com/microsoft/fhir-server-samples).
 
 The high level solution architecture includes: 
@@ -8,6 +8,7 @@ The high level solution architecture includes:
 #### * Ingest Data: Upload the generated data into Azure Blob Storage. Ingest into Azure API for FHIR using an Azure Function.
 #### * Store Data: Store FHIR data in Azure API for FHIR service.
 #### * Export Data: Export FHIR data using Logic Apps into Blob Storage.
+#### * HL7 Ingest and Convert: Ingest HL7v2 messages and convert to FHIR.
 #### * Prepare and Analyze Data: Prepare data using Azure Data Factory and Azure Databricks. Store in Azure SQL DB. Analyze using PowerBI.
 #### * IoMT Connector: Ingest data from IoMT (internet of medical things) devices and persist the data in a FHIR® server.
 #### * Appointment Scheduler: Allow users to schedule an appointment using Healthcare Bot and FHIR. Back to Work: COVID-19 symptom screening to check if it is safe for your employees to return to work.
@@ -23,6 +24,7 @@ Azure Subscription is required to complete this starter kit. Azure Subscription 
 * [Chapter 2 - Azure API for FHIR: Create and configure](./Chapter2-AzureAPIforFHIR/ReadMe.md)
 * [Chapter 3 - Azure Blob Storage and Azure Function: Bulk Ingest data into Azure API for FHIR](./Chapter3-AzureBlobStorageandAzureFunction/ReadMe.md)
 * [Chapter 3.1 - Export FHIR Data: Export FHIR data to Blob Storage](./Chapter3.1-ExportData/ReadMe.md)
+* [Chapter 3.2 - HL7 Ingest and Convert: Ingest HL7v2 messages and convert to FHIR](./Chapter3.2-HL7IngestandConvert/ReadMe.md)
 * [Chapter 4 - Azure Data Factory: Convert bundles to delimited json (ndjson)](./Chapter4-AzureDataFactory/ReadMe.md)
 * [Chapter 5 - Azure Databricks: Parse json and load into Azure SQL DB](./Chapter5-AzureDatabricks/ReadMe.md)
 * [Chapter 6 - PowerBI: Analyze the FHIR bundles](./Chapter6-PowerBI/ReadMe.md)
