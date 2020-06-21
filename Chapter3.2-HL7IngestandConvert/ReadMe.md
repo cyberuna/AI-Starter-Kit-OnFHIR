@@ -11,13 +11,14 @@ This chapter focuses on ingesting a sample ADT01 HL7v2 message into Azure API fo
 1. Download/Clone this [repo](https://github.com/microsoft/health-architectures).
 2. [Deploy  HL7 Ingest Platform](https://github.com/microsoft/health-architectures/tree/master/HL7Conversion#deploying-your-own-hl7-ingest-platform).
 3. Deploy HL7toFHIR Conversion Workflow.
-   ++ For (reference](https://github.com/microsoft/health-architectures/tree/master/HL7Conversion#-deploying-your-own-hl7tofhir-conversion-workflow).
-   ++ Collect the following information from "Azure API for FHIR" created in [Chapter2](../Chapter2-AzureAPIforFHIR/ReadMe.md)
+For (reference](https://github.com/microsoft/health-architectures/tree/master/HL7Conversion#-deploying-your-own-hl7tofhir-conversion-workflow).\
+Collect the following information from "Azure API for FHIR" created in [Chapter2](../Chapter2-AzureAPIforFHIR/ReadMe.md)
    + Client/Application ID for the Service Client
    + The Client Secret for the Service Client
    + The AAD Tenant ID for the FHIR Server/Service Client
    + The Audience/Resource for the FHIR Server/Service Client typically https://myfhirazurehealthcareapis.com for Azure API for FHIR
-   ++ Collect the following information from step2, the HL7 Ingest platform deployment (provided at the end of your deployment):
+
+Collect the following information from step2, the HL7 Ingest platform deployment (provided at the end of your deployment):
    + The resource group name created
    + The storage account name created
    + The service bus namespace created
