@@ -8,7 +8,7 @@ This chapter focuses on ingesting a sample ADT01 HL7v2 message into Azure API fo
 * [Azure API for FHIR R4 server](../Chapter2-AzureAPIforFHIR/ReadMe.md).
 
 ## Architecture
-<center><img src="../images/HL7IngestCapture.png" width="750" height="250"></center>
+<center><img src="../images/HL7IngestCapture.png" width="550" height="250"></center>
 
 ## Steps
 1. Download/Clone this [repo](https://github.com/microsoft/health-architectures).
