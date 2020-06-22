@@ -13,6 +13,7 @@ The high level solution architecture includes:
 #### * IoMT Connector: Ingest data from IoMT (internet of medical things) devices and persist the data in a FHIR® server.
 #### * Appointment Scheduler: Allow users to schedule an appointment using Healthcare Bot and FHIR. Back to Work: COVID-19 symptom screening to check if it is safe for your employees to return to work.
 
+# Reference Architectures
 <center><img src="images//azure-api-fhir-paas.png" width="850"></center>
 
 # Prerequisites
