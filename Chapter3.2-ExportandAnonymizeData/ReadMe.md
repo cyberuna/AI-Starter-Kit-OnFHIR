@@ -9,7 +9,7 @@ The template has two main components:
 * Anonymization: Logic app runs Data Factory pipeline which calls Azure Batch for deidentifying the data and stores in Azure Data Lake
 
 ## Architecture
-<center><img src="../images/ExportandAnonymize.png" width="850" height="300"></center>
+<center><img src="../images/ExportandAnonymize.png" width="850" height="250"></center>
 
 ## Setup
 * Go to [FHIRExportwithAnonymization](https://github.com/microsoft/health-architectures/tree/master/FHIR/FHIRExportwithAnonymization) to implement the template.
