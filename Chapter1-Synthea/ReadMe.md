@@ -31,12 +31,14 @@ By default, Synthea contains publicly available demographic data obtained from t
     * [Zip/Postal code](https://github.com/synthetichealth/synthea/wiki/Zip-or-Postal-Codes) 
 * Output json files will be saved in output folder in the same directory.
 
-
 Detailed Example:\
 To generate data for 100 patients using a seed (unique root of data generation) of 777 in Texas using the associated synthea properties settings:\
 -- Copy [run_synthea](./run_synthea.bat) file to the same location as the .jar file downloaded above.\
 -- Edit the file with your folder locations.\
 -- Run the bat file to generate json files to the output folder in the same directory.
+
+COVID-19 Data Example:\
+-- To generate 50 COVID patients, run this: java -jar synthea-with-dependencies.jar -m "covid19" -p 50
 
 
 ***
