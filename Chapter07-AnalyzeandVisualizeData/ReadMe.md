@@ -1,6 +1,6 @@
 # Chapter07 - Analyze and Visualize Data
 
-#### This chapter provides 2 options to visualize FHIR data in PowerBI.
+#### This chapter focuses on visualizing FHIR data in PowerBI.
 
 * Option 1: Vizualize in PowerBI using PowerQuery Connector for FHIR.
 * Option 2: Vizualize in PowerBI using Azure SQL DB Connector.
@@ -8,8 +8,7 @@
    * Persist structured data into Azure SQL DB.
    * Vizualize in PowerBI using SQL Connector.
 
-## Deploy using [Step by Step Instructions](https://github.com/microsoft/OpenHack-FHIR/tree/main/Challenge05-AzureDataAnalytics)
-to analyze and visualize FHIR data using options.
+### Deploy using [Step by Step Instructions](https://github.com/microsoft/OpenHack-FHIR/tree/main/Challenge05-AzureDataAnalytics) to analyze and visualize FHIR data using options.
 
 ***
 

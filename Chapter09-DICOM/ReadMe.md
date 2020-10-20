@@ -8,8 +8,8 @@ The Medical Imaging Server for DICOM is a .NET Core implementation of DICOMweb&t
 
 ## Setup
 * Medical Imaging Server for DICOM Server
-   * [Deploy](https://github.com/microsoft/dicom-server/blob/master/docs/quickstarts/deploy-via-azure.md) the Medical Imaging Server for DICOM
-   * [Configure](https://github.com/microsoft/dicom-server/blob/master/docs/how-to-guides/configure-dicom-server-settings.md) Medical Imaging Server Server 
+   * Deploy [Medical Imaging Server for DICOM](https://github.com/microsoft/dicom-server/blob/master/docs/quickstarts/deploy-via-azure.md)
+   * Configure [Medical Imaging Server Server](https://github.com/microsoft/dicom-server/blob/master/docs/how-to-guides/configure-dicom-server-settings.md)
    * Setup Azure Active Directory [Authentication](https://github.com/microsoft/dicom-server/blob/master/docs/how-to-guides/enable-authentication-with-tokens.md)
 
 * DICOMweb™ Standard APIs with the Medical Imaging Server for DICOM

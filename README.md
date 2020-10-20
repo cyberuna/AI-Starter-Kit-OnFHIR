@@ -3,6 +3,7 @@
 #### This repository brings together the below Github repos and reference architecture(s) demonstrating integration capabilities of [Azure API for FHIR](https://docs.microsoft.com/azure/healthcare-apis). 
 
    * [Synthea](https://github.com/synthetichealth/synthea)
+   * [FHIR Server](https://github.com/microsoft/fhir-server)
    * [FHIR Server Samples](https://github.com/microsoft/fhir-server-samples)
    * [Health Architectures](https://github.com/microsoft/health-architectures)
    * [DICOM Server](https://github.com/microsoft/dicom-server)
@@ -15,15 +16,15 @@ Azure Subscription is required to complete this starter kit. Azure Subscription 
 <center><img src="images//azure-api-fhir-paas.png" width="850"></center>
 
 Reference architecture includes: 
-#### * [Chapter01 - Generate Data: Generate FHIR data using Synthea](./Chapter01-GenerateData/ReadMe.md)
-#### * [Chapter02 - Ingest and Store Data: Upload the generated data into Azure Blob Storage. Ingest into Azure API for FHIR using an Azure Function](./Chapter02-IngestandStoreData/ReadMe.md)
-#### * [Chapter03 - Export and Anonymize Data: Export FHIR data using Logic Apps into Blob Storage. Anonymize and store into Azure Data Lake Storage](./Chapter03-ExportandAnonymizeData/ReadMe.md)
-#### * [Chapter04 - HL7 Ingest and Convert: Ingest HL7v2 messages and convert to FHIR](./Chapter04-HL7IngestandConvert/ReadMe.md)
-#### * [Chapter05 - IoT FHIR Connector: Ingest data from IoT Central devices and persist in a FHIR® server](./Chapter05-IoTFHIRConnector/ReadMe.md)
-#### * [Chapter06 - Healthcare Bot: Appointment Scheduler allow users to schedule an appointment and Back to Work is COVID-19 symptom screening for employees to return to work](./Chapter06-HealthcareBot/ReadMe.md)
-#### * [Chapter07 - Analyze and Visualize Data: Prepare data using Azure Databricks, store in Azure SQL DB and analyze using PowerBI](./Chapter07-AnalyzeandVisualizeData/ReadMe.md)
-#### * [Chapter08 - Open Source FHIR Server: Setup and Configure open source FHIR server](./Chapter08-OpenSourceFHIRServer/ReadMe.md)
-#### * [Chapter09 - DICOM Server: Deploy Medical Imaging Server for DICOM and ingest metadata into FHIR server](./Chapter09-DICOM/ReadMe.md)
+#### * [Chapter01 - Generate Data using Synthea](./Chapter01-GenerateData/ReadMe.md)
+#### * [Chapter02 - Ingest and Store Data into Azure API for FHIR](./Chapter02-IngestandStoreData/ReadMe.md)
+#### * [Chapter03 - Export and Anonymize FHIR Data](./Chapter03-ExportandAnonymizeData/ReadMe.md)
+#### * [Chapter04 - HL7 Ingest and Convert to FHIR](./Chapter04-HL7IngestandConvert/ReadMe.md)
+#### * [Chapter05 - IoT FHIR Connector to ingest data from IoT Central and persist in FHIR server](./Chapter05-IoTFHIRConnector/ReadMe.md)
+#### * [Chapter06 - Healthcare Bot for Appointment Scheduling and Back to Work](./Chapter06-HealthcareBot/ReadMe.md)
+#### * [Chapter07 - Analyze and Visualize Data using using PowerBI](./Chapter07-AnalyzeandVisualizeData/ReadMe.md)
+#### * [Chapter08 - Open Source FHIR Server Setup and Configuration](./Chapter08-OpenSourceFHIRServer/ReadMe.md)
+#### * [Chapter09 - DICOM Server to deploy Medical Imaging Server for DICOM and DICOM Cast](./Chapter09-DICOM/ReadMe.md)
 #### * [Chapter10 - Text Analytics for Health: Deploy in containers and test using web app](./Chapter10-TextAnalytics/ReadMe.md)
 
 
