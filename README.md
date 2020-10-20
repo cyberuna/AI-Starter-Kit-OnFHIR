@@ -1,39 +1,31 @@
 # OnFHIR - Starter Kit for Azure API for FHIR 
 
-#### This respository contains example code and reference architecture(s) demonstrating capabilities of the [Azure API for FHIR](https://docs.microsoft.com/azure/healthcare-apis) PaaS server to populate and consume patient and financial data. 
-Some of the sample code used here is from the [FHIR Server Samples](https://github.com/microsoft/fhir-server-samples).
+#### This repository brings together the below Github repos and reference architecture(s) demonstrating integration capabilities of [Azure API for FHIR](https://docs.microsoft.com/azure/healthcare-apis). 
 
-The high level solution architecture includes: 
-#### * Generate Data: Generate FHIR data using Synthea.
-#### * Ingest Data: Upload the generated data into Azure Blob Storage. Ingest into Azure API for FHIR using an Azure Function.
-#### * Store Data: Store FHIR data in Azure API for FHIR service.
-#### * Export Data: Export FHIR data using Logic Apps into Blob Storage.
-#### * Export and Anonymize Data: Export FHIR data using Logic Apps into Blob Storage. Anonymize and store into Azure Data Lake Storage.
-#### * HL7 Ingest and Convert: Ingest HL7v2 messages and convert to FHIR.
-#### * Prepare and Analyze Data: Prepare data using Azure Data Factory and Azure Databricks. Store in Azure SQL DB. Analyze using PowerBI.
-#### * IoMT Connector: Ingest data from IoMT (internet of medical things) devices and persist the data in a FHIR® server.
-#### * Appointment Scheduler: Allow users to schedule an appointment using Healthcare Bot and FHIR. Back to Work: COVID-19 symptom screening to check if it is safe for your employees to return to work.
+   * [Synthea](https://github.com/synthetichealth/synthea)
+   * [FHIR Server Samples](https://github.com/microsoft/fhir-server-samples)
+   * [Health Architectures](https://github.com/microsoft/health-architectures)
+   * [DICOM Server](https://github.com/microsoft/dicom-server)
+   * [OpenHack FHIR](https://github.com/microsoft/OpenHack-FHIR)
+
+# Prerequisites
+Azure Subscription is required to complete this starter kit. Azure Subscription can be created for [free](https://azure.microsoft.com/en-us/free/)
 
 # Reference Architectures
 <center><img src="images//azure-api-fhir-paas.png" width="850"></center>
 
-# Prerequisites
-Azure Subscription is required to complete this starter kit. Azure Subscription can be created for free - <https://azure.microsoft.com/en-us/free/>
+Reference architecture includes: 
+#### * [Chapter01 - Generate Data: Generate FHIR data using Synthea](./Chapter01-GenerateData/ReadMe.md)
+#### * [Chapter02 - Ingest and Store Data: Upload the generated data into Azure Blob Storage. Ingest into Azure API for FHIR using an Azure Function](./Chapter02-IngestandStoreData/ReadMe.md)
+#### * [Chapter03 - Export and Anonymize Data: Export FHIR data using Logic Apps into Blob Storage. Anonymize and store into Azure Data Lake Storage](./Chapter03-ExportandAnonymizeData/ReadMe.md)
+#### * [Chapter04 - HL7 Ingest and Convert: Ingest HL7v2 messages and convert to FHIR](./Chapter04-HL7IngestandConvert/ReadMe.md)
+#### * [Chapter05 - IoT FHIR Connector: Ingest data from IoT Central devices and persist in a FHIR® server](./Chapter05-IoTFHIRConnector/ReadMe.md)
+#### * [Chapter06 - Healthcare Bot: Appointment Scheduler allow users to schedule an appointment and Back to Work is COVID-19 symptom screening for employees to return to work](./Chapter06-HealthcareBot/ReadMe.md)
+#### * [Chapter07 - Analyze and Visualize Data: Prepare data using Azure Databricks, store in Azure SQL DB and analyze using PowerBI](./Chapter07-AnalyzeandVisualizeData/ReadMe.md)
+#### * [Chapter08 - Open Source FHIR Server: Setup and Configure open source FHIR server](./Chapter08-OpenSourceFHIRServer/ReadMe.md)
+#### * [Chapter09 - DICOM Server: Deploy Medical Imaging Server for DICOM and ingest metadata into FHIR server](./Chapter09-DICOM/ReadMe.md)
+#### * [Chapter10 - Text Analytics for Health: Deploy in containers and test using web app](./Chapter10-TextAnalytics/ReadMe.md)
 
-# Contents
-
-* [Chapter 1 - Synthea: Generate FHIR patient and financial bundles](./Chapter1-Synthea/ReadMe.md)
-* [Chapter 2 - Azure API for FHIR: Create and configure](./Chapter2-AzureAPIforFHIR/ReadMe.md)
-* [Chapter 3 - Azure Blob Storage and Azure Function: Bulk Ingest data into Azure API for FHIR](./Chapter3-AzureBlobStorageandAzureFunction/ReadMe.md)
-* [Chapter 3.1 - Export FHIR Data: Export FHIR data to Blob Storage](./Chapter3.1-ExportData/ReadMe.md)
-* [Chapter 3.2 - Export and Anonymize: Export and Anonymize FHIR data to Azure Data Lake](./Chapter3.2-ExportandAnonymizeData/ReadMe.md)
-* [Chapter 3.3 - HL7 Ingest and Convert: Ingest HL7v2 messages and convert to FHIR](./Chapter3.2-HL7IngestandConvert/ReadMe.md)
-* [Chapter 4 - Azure Data Factory: Convert bundles to delimited json (ndjson)](./Chapter4-AzureDataFactory/ReadMe.md)
-* [Chapter 5 - Azure Databricks: Parse json and load into Azure SQL DB](./Chapter5-AzureDatabricks/ReadMe.md)
-* [Chapter 6 - PowerBI: Analyze the FHIR bundles](./Chapter6-PowerBI/ReadMe.md)
-* [Chapter 7 - Open Source FHIR Server: Create and Configure](./Chapter7-OpenSourceFHIRServer/ReadMe.md)
-* [Chapter 8 - IoMT FHIR Connector: Ingest and Persist](./Chapter8-IoMTFHIRConnector/ReadMe.md)
-* [Chapter 9 - Healthcare Bot: Booking appointments and Back to Work](./Chapter9-HealthcareBot/ReadMe.md)
 
 # Contributing
 
@@ -51,4 +43,4 @@ Microsoft can make no representation concerning the content of this sample. Micr
 
 ***
 
-[Go to Chapter 1 - Synthea: Generate FHIR patient and financial bundles](../master/Chapter1-Synthea/ReadMe.md)
+[Home](https://github.com/cyberuna/AI-Starter-Kit-OnFHIR)
