@@ -26,7 +26,7 @@ Reference architecture includes:
 #### * [Chapter08 - Open Source FHIR Server Setup and Configuration](./Chapter08-OpenSourceFHIRServer/ReadMe.md)
 #### * [Chapter09 - DICOM Server to deploy Medical Imaging Server for DICOM and DICOM Cast](./Chapter09-DICOM/ReadMe.md)
 #### * [Chapter10 - Text Analytics for Health: Deploy in containers and test using web app](./Chapter10-TextAnalytics/ReadMe.md)
-
+#### * [Chapter11 - Power Platform connectors to FHIR](./Chapter11-PowerPlatform/ReadMe.md)
 
 # Contributing
 
